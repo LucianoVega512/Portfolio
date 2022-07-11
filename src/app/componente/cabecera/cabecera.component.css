@@ -1,0 +1,23 @@
+#contenedor-cabecera {
+    display: grid;
+    height: 12vh;
+    grid-template-columns: repeat(6, 1fr);
+    /* border-bottom: solid 1px #154360; */
+}
+
+#contenedor-cabecera > #contenedor-imagen {
+    grid-column: 1 / 2;
+    padding-top: 3px;
+}
+
+#contenedor-cabecera > #contenedor-redes-sociales {
+    grid-column: 6 / 7;
+    align-self: center;
+    justify-self: center;
+}
+
+.icono-redes {
+    padding: 5px;
+    color: #fff;
+    font-size: 27px
+}
