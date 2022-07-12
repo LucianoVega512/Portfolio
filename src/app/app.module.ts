@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { CabeceraComponent } from './componente/cabecera/cabecera.component';
 import { AcercaDeComponent } from './componente/acerca-de/acerca-de.component';
 import { StackComponent } from './componente/stack/stack.component';
+import { ProyectosComponent } from './componente/proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CabeceraComponent,
     AcercaDeComponent,
-    StackComponent
+    StackComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule

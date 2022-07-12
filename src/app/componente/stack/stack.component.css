@@ -30,10 +30,11 @@ p{
 }
 
 #contenedor-stack > #contenedor-tarjetas > #contenedor-tarjetas-flexible > .item-tarjeta{
-    background-color: #154360;
+    /* background-color: #154360; */
     flex-basis: 100%;
     margin: 10px;
     border-radius: 20px;
+    border: solid 1px #fff;
 }
 
 .icono-editar {
