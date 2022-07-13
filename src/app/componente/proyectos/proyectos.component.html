@@ -1,6 +1,20 @@
 <section id="contenedor-proyectos">
     <div id="contenedor-titulo">
-        <p>PROYECTOS</p>
+        <p class="test1">PROYECTOS</p>
+    </div>
+
+    <div id="contenedor-carrusel">
+        <!-- <div class="contenedor-carrusel-nulo"> -->
+            <img [src]="imagen_actual" style="width: 60%;" alt="">
+        <!-- </div> -->
+    </div>
+
+    <div id="boton-siguiente">
+        <button (click)="siguiente()">S</button>
+    </div>
+
+    <div id="boton-anterior">
+        <button (click)="anterior()">A</button>
     </div>
 </section>
 
