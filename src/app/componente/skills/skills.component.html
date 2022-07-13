@@ -2,4 +2,19 @@
     <div id="contenedor-titulo">
         <p class="orientacion-titulo">SKILLS</p>
     </div>
+
+    <div id="contenedor-grafico">
+        <div id="contenedor-grafico-flexible">
+            <div class="grafico-individual" *ngFor="let skill of skills">
+                <div class="grafico-individual-cabecera">
+                    <mwl-gauge [max]="100" [dialStartAngle]="-90" [dialEndAngle]="-90.001" [value]="skill.valor" [animated]="true"
+                        [animationDuration]="1">
+                    </mwl-gauge>
+                </div>
+                <div class="grafico-individual-cuerpo">
+                    <p>{{skill.tecnologia}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
