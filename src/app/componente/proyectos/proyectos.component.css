@@ -1,5 +1,5 @@
 #contenedor-proyectos {
-    background-color: #154360;
+    /* background-color: #154360; */
     display: grid;
     height: 100vh;
     grid-template-columns: repeat(12, 1fr);
@@ -15,7 +15,7 @@
     justify-self: center;
 }
 
-.test1 {
+.orientacion-titulo {
     writing-mode: vertical-lr; 
     margin: 0;
 }

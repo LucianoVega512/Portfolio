@@ -1,0 +1,21 @@
+#contenedor-skills {
+    background-color: #154360;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+#contenedor-skills > #contenedor-titulo{
+    grid-column: 12 / 13;
+    grid-row: 1 / 13;
+    color: #fff;
+    font-size: 50px;
+    align-self: center;
+    justify-self: center;
+}
+
+.orientacion-titulo {
+    writing-mode: vertical-lr; 
+    margin: 0;
+}
