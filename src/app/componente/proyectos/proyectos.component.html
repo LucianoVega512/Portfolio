@@ -4,17 +4,24 @@
     </div>
 
     <div id="contenedor-carrusel">
-        <!-- <div class="contenedor-carrusel-nulo"> -->
-            <img [src]="imagen_actual" style="width: 60%;" alt="">
-        <!-- </div> -->
+        <div id="contenedor-imagen-flexible">
+            <img [src]="imagen_actual" style="width: 50%;" alt="">
+        </div>
     </div>
 
     <div id="boton-siguiente">
-        <button (click)="siguiente()">S</button>
+        <div class="contenedor-boton-flexible">
+            <button class="boton-carousel" (click)="siguiente()"><i class="fa-solid fa-circle-right iconos"></i></button>            
+        </div>
     </div>
 
     <div id="boton-anterior">
-        <button (click)="anterior()">A</button>
+        <div class="contenedor-boton-flexible">
+            <button class="boton-carousel" (click)="anterior()"><i class="fa-solid fa-circle-left iconos"></i></button>
+        </div>
+    </div>
+
+    <div id="descripcion-proyecto">
+        {{imagen_descripcion}}
     </div>
 </section>
-
