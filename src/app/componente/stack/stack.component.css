@@ -5,21 +5,30 @@
     grid-template-rows: repeat(12, 1fr);
 }
 
-#contenedor-stack > #contenedor-titulo{
-    grid-column: 1 / 14;
-    grid-row: 1 / 3;
+#contenedor-stack > #contenedor-titulo {
+    grid-column: 12 / 13;
+    grid-row: 1 / 13;
     color: #fff;
     font-size: 50px;
     align-self: center;
     justify-self: center;
 }
 
+/* #contenedor-stack > #contenedor-titulo{
+    grid-column: 1 / 14;
+    grid-row: 1 / 3;
+    color: #fff;
+    font-size: 50px;
+    align-self: center;
+    justify-self: center;
+} */
+
 p{
     margin: 0;
 }
 
 #contenedor-stack > #contenedor-tarjetas{
-    grid-column: 2 / 12;
+    grid-column: 2 / 11;
     grid-row: 3 / 11;
     
 }
@@ -66,4 +75,9 @@ p{
     display: flex;
     justify-content: center;
     /* border: solid 1px; */
+}
+
+.orientacion-titulo {
+    writing-mode: vertical-lr;
+    margin: 0;
 }
