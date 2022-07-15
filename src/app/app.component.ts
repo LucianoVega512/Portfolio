@@ -6,6 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'portfolio_luciano';
-  etiqueta:number = 23;
+  mostrarLogin: boolean = false;
+
+  mostrarLogIn(){
+    this.mostrarLogin = !this.mostrarLogin;
+  }
+
 }
