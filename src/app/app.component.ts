@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   mostrarLogin: boolean = false;
   iniciarPorfolio: boolean = false;
-  activarBotonEditar: boolean = false;
+  // activarBotonEditar: boolean = false;
 
   abrirLogin() {
     this.mostrarLogin = true;
@@ -22,7 +22,7 @@ export class AppComponent {
     setTimeout(() => {
       sessionStorage.setItem('token', '91089389hjfjhsdj8u3uriou4');
       this.iniciarPorfolio = true;
-      this.activarBotonEditar = true;
+      // this.activarBotonEditar = true;
     }, 3000);
   }
 }

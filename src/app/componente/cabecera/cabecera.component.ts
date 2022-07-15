@@ -8,10 +8,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class CabeceraComponent implements OnInit {
 
   @Output() abrirLogin = new EventEmitter<undefined>();
-  @Input() botonEditar: boolean;
+  // @Input() botonEditar: boolean;
 
   constructor() {
-    this.botonEditar = false;
+    // this.botonEditar = false;
   }
 
   ngOnInit(): void {
