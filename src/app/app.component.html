@@ -1,41 +1,10 @@
-<app-cabecera></app-cabecera>
+<app-cabecera (abrirLogin)="abrirLogin()" [botonEditar]="activarBotonEditar"></app-cabecera>
 
-<button (click)="mostrarLogIn()">login</button>
-
-<main *ngIf="true">
+<main *ngIf="iniciarPorfolio">
   <app-acerca-de></app-acerca-de>
   <app-stack></app-stack>
   <app-skills></app-skills>
   <app-proyectos></app-proyectos>
 </main>
 
-
-<div id="contenedor-login" *ngIf="mostrarLogin"> 
-  <div id="contenedor-formaulario">
-    <div id="componentes">
-      <div id="logo">
-        <i class="fa-solid fa-user icono-login"></i>
-      </div>
-
-      <div id="etiqueta-usuario">
-        <p>USUARIO</p>
-      </div>
-
-      <div id="usuario">
-        <input type="text" placeholder="usuario">
-      </div>
-
-      <div id="etiqueta-clave">
-        <p>CLAVE</p>
-      </div>
-
-      <div id="clave">
-        <input type="password" placeholder="clave">
-      </div>
-      
-      <div id="boton-aceptar">
-        <button id="btn">Aceptar</button>
-      </div>
-    </div>
-  </div>  
-</div>
+<app-login *ngIf="mostrarLogin" (cerrarVentanaLogin)="cerrarLogin()" (estadoLogin)="estadoLogin($event)"></app-login>

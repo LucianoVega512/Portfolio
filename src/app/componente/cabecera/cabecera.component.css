@@ -19,8 +19,20 @@
     justify-self: center;
 }
 
+#contenedor-cabecera > #contenedor-boton-editar {
+    grid-column: 5 / 6;
+    grid-row: 1 / 2;
+    /* align-self: center;
+    justify-self: center; */
+}
+
+#contenedor-cabecera > #contenedor-boton-login{
+    grid-column: 5 / 6;
+    grid-row: 3 / 4;
+}
+
 #contenedor-cabecera > #contenedor-banner{
-    grid-column: 2 / 6;
+    grid-column: 1 / 4;
     grid-row: 2 / 7;
 }
 

@@ -4,6 +4,10 @@
             <img src="../assets/Argentina_programa.png" style="width: 90%;" alt="">
         </div>
 
+        <div id="contenedor-boton-editar" *ngIf="botonEditar">
+            <button>Editar</button>
+        </div>
+
         <div id="contenedor-redes-sociales">
             <i class="fa-brands fa-linkedin-in icono-redes"></i>
             <i class="fa-brands fa-github icono-redes"></i>
@@ -15,6 +19,10 @@
             <div id="flex-banner">
                 <img src="../assets/programacion.png" style="width: auto;" alt="">
             </div>
+        </div>
+
+        <div id="contenedor-boton-login">
+            <button (click)="mostrarVentanaLogin()">Log In</button>
         </div>
     </div>
 </header>

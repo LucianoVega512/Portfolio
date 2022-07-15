@@ -9,6 +9,7 @@ import { AcercaDeComponent } from './componente/acerca-de/acerca-de.component';
 import { StackComponent } from './componente/stack/stack.component';
 import { ProyectosComponent } from './componente/proyectos/proyectos.component';
 import { SkillsComponent } from './componente/skills/skills.component';
+import { LoginComponent } from './componente/login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SkillsComponent } from './componente/skills/skills.component';
     AcercaDeComponent,
     StackComponent,
     ProyectosComponent,
-    SkillsComponent
+    SkillsComponent,
+    LoginComponent
   ],
   imports: [
     GaugeModule.forRoot(),
