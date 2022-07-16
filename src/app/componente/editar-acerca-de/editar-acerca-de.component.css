@@ -14,20 +14,20 @@
 #contenedor-editar-acerca-de>#contenedor-formaulario {
     background-color: #154360;
     grid-column: 3 / 5;
-    grid-row: 2 / 6;
+    grid-row: 2 / 5;
     border: solid 1px #ccc;
 }
 
 #contenedor-editar-acerca-de>#contenedor-formaulario>#componentes {
     display: grid;
     height: 100%;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
 }
 
 #contenedor-editar-acerca-de>#contenedor-formaulario>#componentes > #cabecera{
     background-color: #263238;
-    grid-column: 1 / 9;
+    grid-column: 1 / 7;
     grid-row: 1 / 2;
     font-size: 20px;
     text-align: center;
@@ -37,19 +37,19 @@
 }
 
 #contenedor-editar-acerca-de > #contenedor-formaulario > #componentes > #etiqueta-nombre{
-    grid-column: 2 / 8;
-    grid-row: 3 / 4;
+    grid-column: 2 / 6;
+    grid-row: 2 / 3;
     align-self: flex-end;
 }
 
 #contenedor-editar-acerca-de > #contenedor-formaulario > #componentes > #entrada-nombre{
-    grid-column: 2 / 8;
-    grid-row: 4 / 5;
+    grid-column: 2 / 6;
+    grid-row: 3 / 4;
 }
 
 #contenedor-editar-acerca-de > #contenedor-formaulario > #componentes > #boton-aceptar{
-    grid-column: 2 / 8;
-    grid-row: 7 / 8;
+    grid-column: 2 / 6;
+    grid-row: 5 / 6;
 }
 
 .etiqueta{
