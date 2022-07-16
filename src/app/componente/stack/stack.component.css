@@ -81,3 +81,8 @@ p{
     writing-mode: vertical-lr;
     margin: 0;
 }
+
+#contenedor-stack > #boton-editar{
+    grid-column: 12 / 13;
+    grid-row: 1 / 2;
+}

@@ -69,3 +69,8 @@
     color: #fff;
     font-size: 50px;
 }
+
+#contenedor-proyectos > #boton-editar{
+    grid-column: 12 / 13;
+    grid-row: 1 / 2;
+}

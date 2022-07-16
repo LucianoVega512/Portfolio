@@ -35,14 +35,10 @@
     justify-self: center;
 }
 
-/* #contenedor-acerca-de > #contenedor-titulo{
-    grid-column: 1 / 7;
+#contenedor-acerca-de > #boton-editar{
+    grid-column: 12 / 13;
     grid-row: 1 / 2;
-    color: #fff;
-    font-size: 50px;
-    align-self: center;
-    justify-self: center;
-} */
+}
 
 p{
     margin: 0;
