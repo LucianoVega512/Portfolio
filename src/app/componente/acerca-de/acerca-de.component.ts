@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcercaDeComponent implements OnInit {
 
-  constructor() { }
+  mostrarVentanaAcercaDe:boolean;
+
+  constructor() { 
+    this.mostrarVentanaAcercaDe = false;
+  }
 
   ngOnInit(): void {
   }
 
+  desplegarVentanaAcercaDe(){
+    this.mostrarVentanaAcercaDe = true;
+  }
+
+  cerrarVentana(){
+    this.mostrarVentanaAcercaDe = false;
+  }
 }

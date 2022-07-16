@@ -18,6 +18,8 @@
     </div>
 
     <div id="boton-editar">
-        <button>editar</button>
+        <button (click)="desplegarVentanaAcercaDe()">editar</button>
     </div>
 </section>
+
+<app-editar-acerca-de *ngIf="mostrarVentanaAcercaDe" (cerrarVentana)="cerrarVentana()"></app-editar-acerca-de>
