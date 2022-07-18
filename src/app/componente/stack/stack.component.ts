@@ -7,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StackComponent implements OnInit {
 
-  constructor() { }
+  mostrarVentanaStack: boolean;
+
+  constructor() {
+    this.mostrarVentanaStack = false;
+  }
+
+  cerrarVentana(){
+    this.mostrarVentanaStack = false;
+  }
+
+  abrirVentanaEdicion(){
+    this.mostrarVentanaStack = true;
+  }
+
 
   ngOnInit(): void {
   }

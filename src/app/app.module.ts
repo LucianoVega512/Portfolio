@@ -11,6 +11,7 @@ import { ProyectosComponent } from './componente/proyectos/proyectos.component';
 import { SkillsComponent } from './componente/skills/skills.component';
 import { LoginComponent } from './componente/login/login.component';
 import { EditarAcercaDeComponent } from './componente/editar-acerca-de/editar-acerca-de.component';
+import { EditarStackComponent } from './componente/editar-stack/editar-stack.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { EditarAcercaDeComponent } from './componente/editar-acerca-de/editar-ac
     ProyectosComponent,
     SkillsComponent,
     LoginComponent,
-    EditarAcercaDeComponent
+    EditarAcercaDeComponent,
+    EditarStackComponent
   ],
   imports: [
     GaugeModule.forRoot(),

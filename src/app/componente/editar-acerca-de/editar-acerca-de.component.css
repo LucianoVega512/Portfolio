@@ -32,7 +32,6 @@
     font-size: 20px;
     text-align: center;
     align-self: center;
-    /* margin: 0; */
     color: #fff;
 }
 
@@ -52,8 +51,8 @@
     grid-row: 5 / 6;
 }
 
-.etiqueta{
+/* .etiqueta{
     margin: 0;
     font-size: 12px;
     color: lightgray;
-}
+} */

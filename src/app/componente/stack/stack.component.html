@@ -44,6 +44,8 @@
     </div>
 
     <div id="boton-editar">
-        <button>editar</button>
+        <button (click)="abrirVentanaEdicion()">editar</button>
     </div>
 </section>
+
+<app-editar-stack *ngIf="mostrarVentanaStack" (cerrarVentana)="cerrarVentana()"></app-editar-stack>

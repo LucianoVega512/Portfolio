@@ -60,11 +60,17 @@
     justify-self: center;
 }
 
-p {
+/* p {
     margin: 0;
     font-size: 12px;
     color: lightgray;
-}
+} */
+
+/* .etiqueta{
+    margin: 0;
+    font-size: 12px;
+    color: lightgray;
+} */
 
 /* input {
 
