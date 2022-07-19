@@ -19,6 +19,9 @@
     </div>
 
     <div id="boton-editar">
-        <button>editar</button>
+        <button (click)="abrirVentana()">editar</button>
     </div>
 </section>
+
+<app-editar-skills *ngIf="mostrarVentanaSkills" (cerrarVentana)="cerrarVentana()"></app-editar-skills>
+<!-- <app-editar-skills></app-editar-skills> -->

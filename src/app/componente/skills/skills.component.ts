@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SkillsComponent implements OnInit {
 
+  mostrarVentanaSkills:boolean;
+
   skills: { tecnologia: string, valor: number }[] = [
     { tecnologia: "Java SE", valor: 90 },
     { tecnologia: "Angular", valor: 70 },
@@ -17,9 +19,20 @@ export class SkillsComponent implements OnInit {
     { tecnologia: "Otro", valor: 60 }
   ];
 
-  constructor() { }
+  constructor() { 
+    this.mostrarVentanaSkills = false;
+  }
 
   ngOnInit(): void {
+  }
+
+  cerrarVentana(){
+    console.log("cerrar");
+    this.mostrarVentanaSkills = false;
+  }
+
+  abrirVentana(){
+    this.mostrarVentanaSkills = true;
   }
 
 }
