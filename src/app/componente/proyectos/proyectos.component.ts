@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
-
-  // imagenes_url:[string, string] = ["jashnd", "sjdfjk"]
+  
+  mostrarVentana:boolean=false;
 
   proyectos: { url: string, descripcion: string }[] = [{url:"./assets/spring.png", descripcion:"descripcion 1"}, 
     {url:"./assets/mysql.png", descripcion:"descripcion 2"}, {url:"./assets/programacion.png", descripcion:"descripcion 3"}];
@@ -34,6 +34,14 @@ export class ProyectosComponent implements OnInit {
       this.imagen_actual = this.proyectos[--this.indice_imagen].url;
       this.imagen_descripcion = this.proyectos[this.indice_imagen].descripcion;
     }
+  }
+
+  cerrarVentana(){
+    this.mostrarVentana = false;
+  }
+
+  abrirVentana(){
+    this.mostrarVentana = true;
   }
 
 }

@@ -1,0 +1,21 @@
+<div id="contenedor-editar-proyectos">
+    <div id="contenedor-formaulario">
+        <div id="cabecera">
+            <p>PROYECTOS</p>
+        </div>
+
+        <div *ngFor="let proyecto of proyectos" [ngClass]="proyecto.descripcion">
+            <p style="margin: 0;">Descripcion 1</p>
+        </div>
+        
+        
+        <div *ngFor="let proyecto of proyectos" [ngClass]="proyecto.entrada">
+            <input type="text" placeholder="Descripcion">
+        </div>
+
+        <div class="boton-aceptar">
+            <button class="btn" (click)="cerrarVentanaProyectos()">Aceptar</button>
+        </div>
+
+    </div>
+</div>

@@ -26,8 +26,8 @@
     </div>
 
     <div id="boton-editar">
-        <button>editar</button>
+        <button (click)="abrirVentana()">editar</button>
     </div>
 </section>
 
-<!-- <app-editar-proyecto></app-editar-proyecto> -->
+<app-editar-proyecto *ngIf="mostrarVentana" (cerrarVentana)="cerrarVentana()"></app-editar-proyecto>
