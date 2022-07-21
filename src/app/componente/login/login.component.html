@@ -1,29 +1,26 @@
-<div id="contenedor-login"> 
-    <div id="contenedor-formaulario">
-      <div id="componentes">
-        <div id="logo">
-          <i class="fa-solid fa-user icono-login"></i>
-        </div>
-  
-        <div id="etiqueta-usuario">
-          <p class="etiqueta">USUARIO</p>
-        </div>
-  
-        <div id="usuario">
-          <input type="text" placeholder="usuario">
-        </div>
-  
-        <div id="etiqueta-clave">
-          <p class="etiqueta">CLAVE</p>
-        </div>
-  
-        <div id="clave">
-          <input type="password" placeholder="clave">
-        </div>
-        
-        <div id="boton-aceptar">
-          <button (click)="login()" class="btn">Aceptar</button>
-        </div>
-      </div>
-    </div>  
-  </div>
+<div id="contenedor-login">
+  <form (submit)="login()" id="contenedor-formaulario">
+    <div id="cabecera">
+      <p>Log In</p>
+    </div>
+
+  <!-- cambiar nombre clases label -->
+    <div id="usuario">
+      <input type="text" placeholder="" class="entrada" required>
+      <label class="lbl-nombre">
+        <span class="txt-nombre">Nombre</span>
+      </label>
+    </div>
+
+    <div id="clave">
+      <input type="password" placeholder="" class="entrada" required>
+      <label class="lbl-nombre">
+        <span class="txt-nombre">Clave</span>
+      </label>
+    </div>
+
+    <div id="boton-aceptar">
+      <button class="boton">Aceptar</button>
+    </div>
+  </form>
+</div>

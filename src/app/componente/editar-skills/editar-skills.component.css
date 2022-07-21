@@ -159,5 +159,4 @@
 
 #contenedor-editar-skills>#contenedor-formaulario>#boton-aceptar {
     grid-area: boton;
-    border: solid 1px #fff;
 }

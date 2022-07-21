@@ -1,39 +1,18 @@
 <div id="contenedor-editar-stack">
-    <div id="contenedor-formaulario">
-        <div id="componentes">
-            <div id="cabecera">
-                <p>STACK</p>
-            </div>
-            <div id="etiqueta-descripcion1">
-                <p class="etiqueta">Descripcion</p> 
-            </div>
-            
-            <div id="entrada-descripcion1">
-                <input type="text" placeholder="nombre">
-            </div>
-            
-            <div id="etiqueta-descripcion2">
-                <p class="etiqueta">Descripcion</p> 
-            </div>
-
-            <div id="entrada-descripcion2">
-                <input type="text" placeholder="nombre">
-            </div>
-
-            <div id="etiqueta-descripcion3">
-                <p class="etiqueta">Descripcion</p>
-            </div>
-            
-            <div id="entrada-descripcion3">
-                <input type="text" placeholder="nombre">
-            </div>
-            
-            <div id="boton-aceptar">
-                <button class="btn" (click)="validarDatosStack()">Aceptar</button>
-            </div>
+    <form id="contenedor-formaulario">
+        <div id="cabecera">
+            <p>STACK</p>
         </div>
-    </div>
+        
+        <div *ngFor="let stack of stacks" [ngClass]="stack.claseTarjeta">
+            <input type="text" placeholder="" class="entrada" required>
+            <label class="lbl-nombre">
+                <span class="txt-nombre">{{stack.span}}</span>
+            </label>
+        </div>
 
+        <div id="boton-aceptar">
+            <button class="boton" (click)="validarDatosStack()">Aceptar</button>
+        </div>
+    </form>
 </div>
-
-

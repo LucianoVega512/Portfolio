@@ -18,21 +18,21 @@
 
     display: grid;
     height: 100%;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(10, 1fr);
 
-    grid-template-areas: "cabecera cabecera cabecera cabecera cabecera cabecera cabecera cabecera"
-                         ". descrip1 descrip1 descrip1 descrip1 descrip1 descrip1 ."
-                         ". entrada1 entrada1 entrada1 entrada1 entrada1 entrada1 ."
-                         ". descrip2 descrip2 descrip2 descrip2 descrip2 descrip2 ."
-                         ". entrada2 entrada2 entrada2 entrada2 entrada2 entrada2 ."
-                         ". descrip3 descrip3 descrip3 descrip3 descrip3 descrip3 ."
-                         ". entrada3 entrada3 entrada3 entrada3 entrada3 entrada3 ."
-                         ". . . . . . . ."
-                         ". boton boton boton boton boton boton .";
+    grid-template-areas: "cabecera cabecera cabecera cabecera cabecera cabecera"
+                         ". descrip1 descrip1 descrip1 descrip1 ."
+                         ". descrip1 descrip1 descrip1 descrip1 ."
+                         ". descrip2 descrip2 descrip2 descrip2 ."
+                         ". descrip2 descrip2 descrip2 descrip2 ."
+                         ". descrip3 descrip3 descrip3 descrip3 ."
+                         ". descrip3 descrip3 descrip3 descrip3 ."
+                         ". . . . . ."
+                         ". boton boton boton boton .";
 }
 
-#contenedor-editar-proyectos>#contenedor-formaulario>#cabecera {
+#contenedor-editar-proyectos > #contenedor-formaulario > #cabecera {
     background-color: #263238;
     grid-area: cabecera;
     font-size: 20px;
@@ -41,39 +41,24 @@
     color: #fff;
 }
 
-#contenedor-editar-proyectos>#contenedor-formaulario>.descripcion1 {
+#contenedor-editar-proyectos > #contenedor-formaulario > .descripcion1 {
     grid-area: descrip1;
+    position: relative;
     align-self: end;
-    font-size: 14px;
-    color: lightgray;
 }
 
-#contenedor-editar-proyectos>#contenedor-formaulario>.entrada1 {
-    grid-area: entrada1;
-}
-
-#contenedor-editar-proyectos>#contenedor-formaulario>.descripcion2 {
+#contenedor-editar-proyectos > #contenedor-formaulario > .descripcion2 {
     grid-area: descrip2;
+    position: relative;
     align-self: end;
-    font-size: 14px;
-    color: lightgray;
 }
 
-#contenedor-editar-proyectos>#contenedor-formaulario>.entrada2 {
-    grid-area: entrada2;
-}
-
-#contenedor-editar-proyectos>#contenedor-formaulario>.descripcion3 {
+#contenedor-editar-proyectos > #contenedor-formaulario > .descripcion3 {
     grid-area: descrip3;
+    position: relative;
     align-self: end;
-    font-size: 14px;
-    color: lightgray;
 }
 
-#contenedor-editar-proyectos>#contenedor-formaulario>.entrada3 {
-    grid-area: entrada3;
-}
-
-#contenedor-editar-proyectos>#contenedor-formaulario>.boton-aceptar {
+#contenedor-editar-proyectos > #contenedor-formaulario > #boton-aceptar {
     grid-area: boton;
 }

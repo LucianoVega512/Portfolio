@@ -15,7 +15,7 @@ export class EditarAcercaDeComponent implements OnInit {
   }
 
   cerrarVentanaAcercaDe(){
-    this.cerrarVentana.emit(true);
+    this.cerrarVentana.emit(false);
   }
 
 }

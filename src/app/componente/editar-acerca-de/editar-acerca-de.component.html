@@ -1,21 +1,20 @@
 <div id="contenedor-editar-acerca-de">
-    <div id="contenedor-formaulario">
-        <div id="componentes">
-            <div id="cabecera">
-                <p>ACERCA DE</p>
-            </div>
-
-            <div id="etiqueta-nombre">
-                <p class="etiqueta">NOMBRE</p>
-            </div>
-
-            <div id="entrada-nombre">
-                <input type="text" placeholder="nombre">
-            </div>
-
-            <div id="boton-aceptar">
-                <button class="btn" (click)="cerrarVentanaAcercaDe()">Aceptar</button>
-            </div>
-        </div>
+  <!-- <form id="contenedor-formaulario" (submit)="cerrarVentanaAcercaDe()"> -->
+  <form id="contenedor-formaulario">
+    <div id="cabecera">
+      <p>ACERCA DE</p>
     </div>
+
+    <div id="nombre">
+      <input type="text" placeholder="" class="entrada" required>
+      <label class="lbl-nombre">
+        <span class="txt-nombre">Nombre</span>
+      </label>
+    </div>
+
+    <div id="boton-aceptar">
+      <button class="boton" (click)="cerrarVentanaAcercaDe()">Aceptar</button>
+    </div>
+    <!-- </div> -->
+  </form>
 </div>
