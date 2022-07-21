@@ -48,10 +48,10 @@
     color: #fff;
 }
 
-.orientacion-titulo {
+/* .orientacion-titulo {
     writing-mode: vertical-lr;
     margin: 0;
-}
+} */
 
  mwl-gauge {
     width: 200px;

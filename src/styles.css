@@ -8,6 +8,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.orientacion-titulo {
+    writing-mode: vertical-lr;
+    margin: 0;
+}
+
 .entrada {
     height: 100%;
     width: 100%;

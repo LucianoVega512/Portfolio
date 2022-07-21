@@ -15,10 +15,10 @@
     justify-self: center;
 }
 
-.orientacion-titulo {
+/* .orientacion-titulo {
     writing-mode: vertical-lr; 
     margin: 0;
-}
+} */
 
 #contenedor-proyectos > #contenedor-carrusel{
     grid-column: 3 / 10;

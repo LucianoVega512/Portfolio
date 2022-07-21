@@ -3,6 +3,32 @@
         <p class="orientacion-titulo">STACK</p>
     </div>
 
+    <div id="contenedor-tarjeta1">
+        tarjeta 1
+    </div>
+
+    <div id="contenedor-tarjeta2">
+        tarjeta 2
+    </div>
+
+    <div id="contenedor-tarjeta3">
+        tarjeta 3
+    </div>
+
+    <div id="chip">
+        
+
+    </div>
+
+    <div id="boton-editar">
+        <button (click)="abrirVentanaEdicion()">editar</button>
+    </div>
+</section>
+
+<app-editar-stack *ngIf="mostrarVentanaStack" (cerrarVentana)="cerrarVentana()"></app-editar-stack>
+
+<!-- 
+
     <div id="contenedor-tarjetas">
         <div id="contenedor-tarjetas-flexible">
             <div class="item-tarjeta">
@@ -43,9 +69,4 @@
         </div>
     </div>
 
-    <div id="boton-editar">
-        <button (click)="abrirVentanaEdicion()">editar</button>
-    </div>
-</section>
-
-<app-editar-stack *ngIf="mostrarVentanaStack" (cerrarVentana)="cerrarVentana()"></app-editar-stack>
+ -->
