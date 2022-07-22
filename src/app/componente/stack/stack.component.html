@@ -3,21 +3,21 @@
         <p class="orientacion-titulo">STACK</p>
     </div>
 
-    <div id="contenedor-tarjeta1">
-        tarjeta 1
-    </div>
+    <div *ngFor="let tarjeta of tarjetas" [ngClass]="tarjeta.claseTarjeta">
+        <div class="cabecera-tarjeta">
+            <img [src]="tarjeta.urlImagen" alt="" style="width: 60%;">
+        </div>
 
-    <div id="contenedor-tarjeta2">
-        tarjeta 2
-    </div>
-
-    <div id="contenedor-tarjeta3">
-        tarjeta 3
+        <div class="texto-tarjeta">
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
     </div>
 
     <div id="chip">
-        
-
+        <div *ngFor="let chip of chips">
+            <p>{{chip}}</p>
+            <button *ngIf="true"><i class="fa-solid fa-circle-xmark icono-cerrar"></i></button>
+        </div>
     </div>
 
     <div id="boton-editar">
@@ -26,47 +26,3 @@
 </section>
 
 <app-editar-stack *ngIf="mostrarVentanaStack" (cerrarVentana)="cerrarVentana()"></app-editar-stack>
-
-<!-- 
-
-    <div id="contenedor-tarjetas">
-        <div id="contenedor-tarjetas-flexible">
-            <div class="item-tarjeta">
-                <div class="item-tarjeta-cabecera">
-                    <img src="./assets/angular.png" alt="">
-                </div>
-                <div class="item-tarjeta-cuerpo">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa temporibus consequuntur consequatur veritatis in labore obcaecati dolorum sed repellat! Quae!                  
-                </div>
-                <div class="item-tarjeta-pie">
-                    <i class="fa-brands fa-linkedin-in icono-editar"></i>
-                </div>
-            </div>
-
-            <div class="item-tarjeta">
-                <div class="item-tarjeta-cabecera">
-                    <img src="./assets/spring.png" alt="">
-                </div>
-                <div class="item-tarjeta-cuerpo">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, cumque.                  
-                </div>
-                <div class="item-tarjeta-pie">
-                    <i class="fa-brands fa-linkedin-in icono-editar"></i>
-                </div>
-            </div>
-
-            <div class="item-tarjeta">
-                <div class="item-tarjeta-cabecera">
-                    <img src="./assets/mysql.png" alt="">
-                </div>
-                <div class="item-tarjeta-cuerpo">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, cumque.  
-                </div>
-                <div class="item-tarjeta-pie">
-                    <i class="fa-brands fa-linkedin-in icono-editar"></i>
-                </div>
-            </div>
-        </div>
-    </div>
-
- -->
