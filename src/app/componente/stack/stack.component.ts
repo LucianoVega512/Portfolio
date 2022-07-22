@@ -29,6 +29,9 @@ export class StackComponent implements OnInit {
     this.mostrarVentanaStack = true;
   }
 
+  removerChip(indice:number){
+    this.chips.splice(indice,1);
+  }
 
   ngOnInit(): void {
   }

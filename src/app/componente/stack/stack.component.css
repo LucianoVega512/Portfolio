@@ -4,7 +4,7 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
 
-    grid-template-areas: ". . . . . . . . . . . titulo"
+    grid-template-areas: "boton . . . . . . . . . . titulo"
                          ". tarjeta1 tarjeta1 tarjeta1 tarjeta2 tarjeta2 tarjeta2 tarjeta3 tarjeta3 tarjeta3 . titulo"
                          ". tarjeta1 tarjeta1 tarjeta1 tarjeta2 tarjeta2 tarjeta2 tarjeta3 tarjeta3 tarjeta3 . titulo"
                          ". tarjeta1 tarjeta1 tarjeta1 tarjeta2 tarjeta2 tarjeta2 tarjeta3 tarjeta3 tarjeta3 . titulo"
@@ -15,7 +15,7 @@
                          ". . . . . . . . . . . titulo"
                          ". . chip chip chip chip chip chip chip . . titulo"
                          ". . chip chip chip chip chip chip chip . . titulo"
-                         "boton . . . . . . . . . . titulo";
+                         ". . . . . . . . . . . titulo";
 
     grid-gap: 10px;
 }
@@ -30,7 +30,7 @@
 
 #contenedor-stack > .contenedor-tarjeta1{
     grid-area: tarjeta1;
-    border: solid 1px #fff;
+    /* border: solid 1px #fff; */
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -110,4 +110,9 @@
 
 #contenedor-stack > #boton-editar{
     grid-area: boton;
+}
+
+#contenedor-stack > #boton-editar > button{
+    height: 100%;
+    width: 100%;
 }

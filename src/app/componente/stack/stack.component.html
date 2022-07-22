@@ -9,19 +9,19 @@
         </div>
 
         <div class="texto-tarjeta">
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>{{tarjeta.descripcion}}</p>
         </div>
     </div>
 
     <div id="chip">
-        <div *ngFor="let chip of chips">
+        <div *ngFor="let chip of chips; let i=index">
             <p>{{chip}}</p>
-            <button *ngIf="true"><i class="fa-solid fa-circle-xmark icono-cerrar"></i></button>
+            <button *ngIf="true" (click)="removerChip(i)"><i class="fa-solid fa-circle-xmark icono-cerrar"></i></button>
         </div>
     </div>
 
     <div id="boton-editar">
-        <button (click)="abrirVentanaEdicion()">editar</button>
+        <button (click)="abrirVentanaEdicion()"><i class="fa-solid fa-user-pen"></i></button>
     </div>
 </section>
 

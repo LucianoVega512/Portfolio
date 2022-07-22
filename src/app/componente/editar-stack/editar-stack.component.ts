@@ -12,7 +12,8 @@ export class EditarStackComponent implements OnInit {
   stacks: { claseTarjeta: string, span: string}[] = [
     { claseTarjeta: "tarjeta1", span: "Descripcion 1"},
     { claseTarjeta: "tarjeta2", span: "Descripcion 2"},
-    { claseTarjeta: "tarjeta3", span: "Descripcion 3"}
+    { claseTarjeta: "tarjeta3", span: "Descripcion 3"},
+    { claseTarjeta: "chip", span: "Agregar chip"}
   ];
 
   constructor() { }
