@@ -4,8 +4,8 @@
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
 
-    grid-template-areas: "boton . . . . . . . . . . titulo"
-                         ". tarjeta1 tarjeta1 tarjeta1 tarjeta2 tarjeta2 tarjeta2 tarjeta3 tarjeta3 tarjeta3 . titulo"
+    grid-template-areas: ". . . . . . . . . . . boton"
+                         ". tarjeta1 tarjeta1 tarjeta1 tarjeta2 tarjeta2 tarjeta2 tarjeta3 tarjeta3 tarjeta3 . boton"
                          ". tarjeta1 tarjeta1 tarjeta1 tarjeta2 tarjeta2 tarjeta2 tarjeta3 tarjeta3 tarjeta3 . titulo"
                          ". tarjeta1 tarjeta1 tarjeta1 tarjeta2 tarjeta2 tarjeta2 tarjeta3 tarjeta3 tarjeta3 . titulo"
                          ". tarjeta1 tarjeta1 tarjeta1 tarjeta2 tarjeta2 tarjeta2 tarjeta3 tarjeta3 tarjeta3 . titulo"
@@ -17,13 +17,14 @@
                          ". . chip chip chip chip chip chip chip . . titulo"
                          ". . . . . . . . . . . titulo";
 
-    grid-gap: 10px;
+    /* grid-gap: 10px; */
 }
 
 #contenedor-stack > #contenedor-titulo {
     grid-area: titulo;
     color: #fff;
     font-size: 50px;
+    /* padding: 0; */
     align-self: center;
     justify-self: center;
 }
@@ -38,7 +39,7 @@
 
 #contenedor-stack > .contenedor-tarjeta2{
     grid-area: tarjeta2;
-    border: solid 1px #fff;
+    /* border: solid 1px #fff; */
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -46,7 +47,7 @@
 
 #contenedor-stack > .contenedor-tarjeta3{
     grid-area: tarjeta3;
-    border: solid 1px #fff;
+    /* border: solid 1px #fff; */
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -85,13 +86,16 @@
     height: 45%;
     align-items: center;
     
+    text-align: center;
     margin: 5px 10px 0 0;
     /* border: solid 1px #fff; */
 }
 
 #contenedor-stack > #chip > div > p{
     font-size: 15px;
-    padding: 0 10px 0 10px;
+    /* padding: 0 10px 0 10px; */
+    margin: 10px;
+    /* text-align: center; */
     color: #fff;
 }
 
@@ -110,9 +114,25 @@
 
 #contenedor-stack > #boton-editar{
     grid-area: boton;
+    align-self: center;
+    justify-self: center;
 }
 
-#contenedor-stack > #boton-editar > button{
-    height: 100%;
-    width: 100%;
+/* #contenedor-stack > #boton-editar > button{ */
+#contenedor-stack > #boton-editar > span{
+    /* height: 100%; */
+    /* width: 100%; */
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    /* border: solid 1px #fff; */
+}
+
+.icono-editar{
+    color: #fff;
+    font-size: 28px;
+    border: solid 1px #fff;
+    padding: 10px;
+    border-radius: 50%;
 }

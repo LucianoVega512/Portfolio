@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { GaugeModule } from 'angular-gauge';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { CabeceraComponent } from './componente/cabecera/cabecera.component';
@@ -31,6 +33,8 @@ import { EditarProyectoComponent } from './componente/editar-proyecto/editar-pro
   ],
   imports: [
     GaugeModule.forRoot(),
+    ReactiveFormsModule,
+    FormsModule,
     BrowserModule
   ],
   providers: [],

@@ -3,7 +3,8 @@
         <p class="orientacion-titulo">STACK</p>
     </div>
 
-    <div *ngFor="let tarjeta of tarjetas" [ngClass]="tarjeta.claseTarjeta">
+    <!-- <div *ngFor="let tarjeta of tarjetas; let i=index" [ngClass]="clases[i]"> -->
+    <div *ngFor="let tarjeta of stack.tarjeta; let i=index" [ngClass]="clases[i]">
         <div class="cabecera-tarjeta">
             <img [src]="tarjeta.urlImagen" alt="" style="width: 60%;">
         </div>
@@ -14,15 +15,16 @@
     </div>
 
     <div id="chip">
-        <div *ngFor="let chip of chips; let i=index">
+        <div *ngFor="let chip of stack.chips let i=index">
             <p>{{chip}}</p>
             <button *ngIf="true" (click)="removerChip(i)"><i class="fa-solid fa-circle-xmark icono-cerrar"></i></button>
         </div>
     </div>
 
     <div id="boton-editar">
-        <button (click)="abrirVentanaEdicion()"><i class="fa-solid fa-user-pen"></i></button>
+        <!-- <button (click)="abrirVentanaEdicion()"><i class="fa-solid fa-user-pen icono-editar"></i></button> -->
+        <span (click)="abrirVentanaEdicion()"><i class="fa-solid fa-user-pen icono-editar"></i></span>
     </div>
 </section>
 
-<app-editar-stack *ngIf="mostrarVentanaStack" (cerrarVentana)="cerrarVentana()"></app-editar-stack>
+<app-editar-stack *ngIf="mostrarVentanaStack" (validarFormulario)="validarFormulario($event)"></app-editar-stack>
