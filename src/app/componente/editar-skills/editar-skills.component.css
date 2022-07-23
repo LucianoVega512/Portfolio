@@ -30,7 +30,7 @@
         ". rango3 rango3 rango3 valor3 . rango6 rango6 rango6 valor6 ."
         ". . . . . . . . . . ."
         ". . . boton boton boton boton boton . . .";
-           
+
 
     border: solid 1px #ccc;
 }
@@ -53,6 +53,7 @@
 
 #contenedor-editar-skills>#contenedor-formaulario>.rango1 {
     grid-area: rango1;
+    align-self: center;
 }
 
 #contenedor-editar-skills>#contenedor-formaulario>.valor1 {
@@ -72,6 +73,7 @@
 
 #contenedor-editar-skills>#contenedor-formaulario>.rango2 {
     grid-area: rango2;
+    align-self: center;
 }
 
 #contenedor-editar-skills>#contenedor-formaulario>.valor2 {
@@ -91,6 +93,7 @@
 
 #contenedor-editar-skills>#contenedor-formaulario>.rango3 {
     grid-area: rango3;
+    align-self: center;
 }
 
 #contenedor-editar-skills>#contenedor-formaulario>.valor3 {
@@ -110,6 +113,7 @@
 
 #contenedor-editar-skills>#contenedor-formaulario>.rango4 {
     grid-area: rango4;
+    align-self: center;
 }
 
 #contenedor-editar-skills>#contenedor-formaulario>.valor4 {
@@ -129,6 +133,7 @@
 
 #contenedor-editar-skills>#contenedor-formaulario>.rango5 {
     grid-area: rango5;
+    align-self: center;
 }
 
 #contenedor-editar-skills>#contenedor-formaulario>.valor5 {
@@ -138,6 +143,7 @@
     font-size: 22px;
     color: lightgray;
 }
+
 #contenedor-editar-skills>#contenedor-formaulario>.etiqueta6 {
     grid-area: etiqueta6;
     align-self: end;
@@ -147,6 +153,7 @@
 
 #contenedor-editar-skills>#contenedor-formaulario>.rango6 {
     grid-area: rango6;
+    align-self: center;
 }
 
 #contenedor-editar-skills>#contenedor-formaulario>.valor6 {
