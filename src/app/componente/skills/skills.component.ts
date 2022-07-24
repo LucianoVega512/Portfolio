@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
+import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 import { Skills } from 'src/app/servicio/Skills';
 
 
@@ -13,17 +14,21 @@ export class SkillsComponent implements OnInit {
 
   mostrarVentanaSkills: boolean;
 
+  esAdministrador:boolean;
+
   campoVacio: boolean = false;
 
   skills: Skills;
   config:string[];
 
-  constructor(private datos: DatosBackendService) {
+  constructor(private datos: DatosBackendService, private jwt:EstadoJwtService) {
     this.mostrarVentanaSkills = false;
 
     this.skills = datos.obtenerSkills();
 
     this.config = this.skills.tecnologia;
+
+    this.esAdministrador = jwt.esAdministrador();
   }
 
   ngOnInit(): void {

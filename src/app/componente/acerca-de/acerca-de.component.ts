@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { AcercaDe } from 'src/app/servicio/AcercaDe';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
+import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -9,13 +10,16 @@ import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
+  esAdministrador:boolean;
 
   mostrarVentanaAcercaDe: boolean = false;
 
   acercaDe: AcercaDe;
 
-  constructor(private datos: DatosBackendService) {
-    this.acercaDe = datos.obtenerAcercaDe();
+  constructor(private datos: DatosBackendService, private jwt:EstadoJwtService) {
+    this.acercaDe = datos.obtenerAcercaDe();  
+    
+    this.esAdministrador = jwt.esAdministrador();
   }
 
   ngOnInit(): void {

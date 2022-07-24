@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
+import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 import { Proyectos } from 'src/app/servicio/Proyectos';
 
 @Component({
@@ -11,23 +12,19 @@ import { Proyectos } from 'src/app/servicio/Proyectos';
 export class ProyectosComponent implements OnInit {
 
   mostrarVentana: boolean = false;
+  esAdministrador:boolean;
 
   proyectos:Proyectos;
 
-  // proyectos: { url: string, descripcion: string }[] = [{ url: "./assets/spring.png", descripcion: "descripcion 1" },
-  // { url: "./assets/mysql.png", descripcion: "descripcion 2" }, { url: "./assets/programacion.png", descripcion: "descripcion 3" }];
-
-  // [{"./assets/spring.png", "Esta es una"}, {"./assets/mysql.png", "sdfd"}, {"./assets/programacion.png"}];
-  // imagen_actual: string = "./assets/spring.png";
-  // imagen_descripcion: string = "descripcion 1";
   imagen_actual: string = "";
   imagen_descripcion: string = "";
   indice_imagen: number = 0;
 
-  constructor(private datos: DatosBackendService) { 
+  constructor(private datos: DatosBackendService, private jwt:EstadoJwtService) {
     this.proyectos = datos.obtenerProyectos();
     this.imagen_actual = this.proyectos.urls[0];
     this.imagen_descripcion = this.proyectos.descripciones[0];
+    this.esAdministrador = jwt.esAdministrador();
   }
 
   ngOnInit(): void {

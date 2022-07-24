@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
+import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 import { Stack } from 'src/app/servicio/Stack';
 
 @Component({
@@ -12,14 +13,18 @@ export class StackComponent implements OnInit {
 
   mostrarVentanaStack: boolean;
 
+  esAdministrador:boolean;
+
   stack: Stack;
 
   clases: string[] = ["contenedor-tarjeta1", "contenedor-tarjeta2", "contenedor-tarjeta3"];
 
-  constructor(private datos: DatosBackendService) {
+  constructor(private datos: DatosBackendService, private jwt:EstadoJwtService) {
     this.mostrarVentanaStack = false;
 
     this.stack = datos.obtenerStack();
+
+    this.esAdministrador = jwt.esAdministrador();
   }
 
   ngOnInit(): void {

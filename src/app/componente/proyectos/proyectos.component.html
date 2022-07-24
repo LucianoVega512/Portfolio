@@ -25,7 +25,7 @@
         {{imagen_descripcion}}
     </div>
 
-    <div id="boton-editar">
+    <div id="boton-editar" *ngIf="esAdministrador">
         <button (click)="abrirVentana()" class="boton-editar"><i class="fa-solid fa-user-pen icono-editar"></i></button>
     </div>
 </section>
