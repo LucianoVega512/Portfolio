@@ -118,21 +118,17 @@
     justify-self: center;
 }
 
-#contenedor-stack > #boton-editar > button{
-/* #contenedor-stack > #boton-editar > span{ */
-    /* height: 100%; */
-    /* width: 100%; */
+/* #contenedor-stack > #boton-editar > button{
     cursor: pointer;
     background-color: transparent;
     border: none;
     border-radius: 50%;
-    /* border: solid 1px #fff; */
-}
+} */
 
-.icono-editar{
+/* .icono-editar{
     color: #fff;
     font-size: 28px;
     border: solid 1px #fff;
     padding: 12px 10px 12px 10px;
     border-radius: 50%;
-}
+} */
