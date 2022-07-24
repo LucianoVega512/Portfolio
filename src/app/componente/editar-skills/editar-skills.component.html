@@ -1,28 +1,19 @@
 <div id="contenedor-editar-skills">
-    <div id="contenedor-formaulario">
+    <form id="contenedor-formaulario" [formGroup]="formulario">
         <div id="cabecera">
             <p>SKILLS</p>
         </div>
-        
-        <div *ngFor="let skill of skills" [ngClass]="skill.claseEtiqueta">
-            {{skill.nombre}}
+
+        <div *ngFor="let configuracion of configuraciones; let i=index" [ngClass]="configuracion.claseRango">
+            <input type="number" placeholder="" class="entrada" min="1" max="100" required [formControlName]="configuracion.nombreCampo">
+            <label class="lbl-nombre">
+                <!-- <span class="txt-nombre">{{configuracion.nombre}}</span> -->
+                <span class="txt-nombre">{{iniciarSkills[i]}}</span>
+            </label>
         </div>
 
-        <div *ngFor="let skill of skills" [ngClass]="skill.claseRango">
-            <input type="range" min="1" max="100" value={{skill.valor}}>
-        </div>
-
-        <div *ngFor="let skill of skills" [ngClass]="skill.claseValor">
-            <p style="margin: 0;">{{skill.valor}}</p>
-        </div>
-        
         <div id="boton-aceptar">
             <button class="boton" (click)="validarDatosSkills()">Aceptar</button>
-        </div>
-    </div>
+        </div> 
+    </form>
 </div>
-
-
-<!-- <div id="boton-aceptar">
-    <button class="btn" (click)="validarDatosSkills()">Aceptar</button>
-</div> -->

@@ -5,14 +5,14 @@
 
     <div id="contenedor-grafico">
         <div id="contenedor-grafico-flexible">
-            <div class="grafico-individual" *ngFor="let skill of skills">
+            <div class="grafico-individual" *ngFor="let skill of skills.valor; let i=index">
                 <div class="grafico-individual-cabecera">
-                    <mwl-gauge [max]="100" [dialStartAngle]="-90" [dialEndAngle]="-90.001" [value]="skill.valor" [animated]="true"
-                        [animationDuration]="1">
+                    <mwl-gauge [max]="100" [dialStartAngle]="-90" [dialEndAngle]="-90.001" [value]="skill" [animated]="true"
+                        [animationDuration]="2">
                     </mwl-gauge>
                 </div>
                 <div class="grafico-individual-cuerpo">
-                    <p>{{skill.tecnologia}}</p>
+                    <p>{{skills.tecnologia[i]}}</p>
                 </div>
             </div>
         </div>
@@ -23,4 +23,5 @@
     </div>
 </section>
 
-<app-editar-skills *ngIf="mostrarVentanaSkills" (cerrarVentana)="cerrarVentana()"></app-editar-skills>
+<app-editar-skills *ngIf="mostrarVentanaSkills" (validarFormulario)="validarFormulario($event)" [iniciarSkills]="config"></app-editar-skills>
+<!-- <app-editar-skills *ngIf="true" (cerrarVentana)="cerrarVentana()"></app-editar-skills> -->

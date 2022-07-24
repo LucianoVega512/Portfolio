@@ -13,14 +13,14 @@ export class EditarStackComponent implements OnInit {
 
   formulario:FormGroup;
 
-  stacks: { claseTarjeta: string, span: string, nombreCampo:string, valorEntrada:string}[] = [
-    { claseTarjeta: "tarjeta1", span: "Descripcion 1", nombreCampo:"descripcion1", valorEntrada:""},
-    { claseTarjeta: "tarjeta2", span: "Descripcion 2", nombreCampo:"descripcion2", valorEntrada:""},
-    { claseTarjeta: "tarjeta3", span: "Descripcion 3", nombreCampo:"descripcion3", valorEntrada:""},
-    { claseTarjeta: "chip", span: "Agregar chip", nombreCampo:"chip", valorEntrada:""}
+  stacks: { claseTarjeta: string, span: string, nombreCampo:string}[] = [
+    { claseTarjeta: "tarjeta1", span: "Descripcion 1", nombreCampo:"descripcion1"},
+    { claseTarjeta: "tarjeta2", span: "Descripcion 2", nombreCampo:"descripcion2"},
+    { claseTarjeta: "tarjeta3", span: "Descripcion 3", nombreCampo:"descripcion3"},
+    { claseTarjeta: "chip", span: "Agregar chip", nombreCampo:"chip"}
   ];
 
-  constructor(private datos:DatosBackendService) { 
+  constructor() { 
     this.formulario = new FormGroup({
       descripcion1: new FormControl(''),
       descripcion2: new FormControl(''),

@@ -20,7 +20,6 @@ export class StackComponent implements OnInit {
     this.mostrarVentanaStack = false;
 
     this.stack = datos.obtenerStack();
-    console.log(this.stack);
   }
 
   ngOnInit(): void {
