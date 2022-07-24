@@ -65,6 +65,12 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+
+          "options": {
+            "browserTarget": "portfolio_luciano:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
+
           "configurations": {
             "production": {
               "browserTarget": "portfolio_luciano:build:production"

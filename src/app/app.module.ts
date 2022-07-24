@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { GaugeModule } from 'angular-gauge';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CabeceraComponent } from './componente/cabecera/cabecera.component';
@@ -35,7 +36,8 @@ import { EditarProyectoComponent } from './componente/editar-proyecto/editar-pro
     GaugeModule.forRoot(),
     ReactiveFormsModule,
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
