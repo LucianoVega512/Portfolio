@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-acerca-de',
@@ -7,15 +8,21 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class EditarAcercaDeComponent implements OnInit {
 
-  @Output() cerrarVentana = new EventEmitter<boolean>();
+  @Output() validarAcercaDe: EventEmitter<FormGroup> = new EventEmitter();
 
-  constructor() { }
+  formulario: FormGroup;
+
+  constructor() { 
+    this.formulario = new FormGroup({
+      nombre: new FormControl('')
+    })
+  }
 
   ngOnInit(): void {
   }
 
   cerrarVentanaAcercaDe(){
-    this.cerrarVentana.emit(false);
+    this.validarAcercaDe.emit(this.formulario);
   }
 
 }

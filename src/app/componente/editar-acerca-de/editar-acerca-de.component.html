@@ -1,11 +1,11 @@
 <div id="contenedor-editar-acerca-de">
-  <form id="contenedor-formaulario">
+  <form id="contenedor-formaulario" [formGroup]="formulario">
     <div id="cabecera">
       <p>ACERCA DE</p>
     </div>
 
     <div id="nombre">
-      <input type="text" placeholder="" class="entrada" required>
+      <input type="text" placeholder="" class="entrada" required formControlName= "nombre">
       <label class="lbl-nombre">
         <span class="txt-nombre">Nombre</span>
       </label>

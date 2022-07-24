@@ -10,7 +10,7 @@
     </div> 
 
     <div id="contenedor-saludo">
-        <p>Hola Soy Luciano!</p>    
+        <p>Hola soy {{acercaDe.nombre}} !</p>    
     </div>
 
     <div id="contenedor-sub-titulo">
@@ -18,9 +18,9 @@
     </div>
 
     <div id="boton-editar">
-        <button (click)="desplegarVentanaAcercaDe()">editar</button>
+        <button (click)="desplegarVentanaAcercaDe()" class="boton-editar"><i class="fa-solid fa-user-pen icono-editar"></i></button>
     </div>
 </section>
 
-<app-editar-acerca-de *ngIf="mostrarVentanaAcercaDe" (cerrarVentana)="cerrarVentana()"></app-editar-acerca-de>
+<app-editar-acerca-de *ngIf="mostrarVentanaAcercaDe" (validarAcercaDe)="validarAcercaDe($event)"></app-editar-acerca-de>
 
