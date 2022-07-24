@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-editar-proyecto',
@@ -7,22 +8,25 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class EditarProyectoComponent implements OnInit {
 
-  @Output() cerrarVentana: EventEmitter<boolean> = new EventEmitter();
+  @Output() validarProyectos: EventEmitter<FormGroup> = new EventEmitter();
 
-  // proyectos: { claseDescripcion: string, entrada: string }[] = [
-  //   { claseDescripcion: "descripcion1", entrada: "entrada1" },
-  //   { claseDescripcion: "descripcion2", entrada: "entrada2" },
-  //   { claseDescripcion: "descripcion3", entrada: "entrada3" },
-  // ]
+  formulario:FormGroup;
+
   proyectos: string[] = ["descripcion1", "descripcion2", "descripcion3"];
 
-  constructor() { }
+  constructor() { 
+    this.formulario = new FormGroup({
+      descripcion1: new FormControl(''),
+      descripcion2: new FormControl(''),
+      descripcion3: new FormControl('')
+    })
+  }
 
   ngOnInit(): void {
   }
 
   cerrarVentanaProyectos() {
-    this.cerrarVentana.emit(true);
+    this.validarProyectos.emit(this.formulario);
   }
 
 }

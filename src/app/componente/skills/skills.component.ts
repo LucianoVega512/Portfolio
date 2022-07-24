@@ -48,7 +48,6 @@ export class SkillsComponent implements OnInit {
 
   private validarCampo(form: FormGroup, campo: string, indice:number) {
     if (!form.get(campo)?.invalid) {
-
       this.skills.valor[indice] = form.get(campo)?.value;
       this.campoVacio = true;
     }

@@ -26,8 +26,8 @@
     </div>
 
     <div id="boton-editar">
-        <button (click)="abrirVentana()">editar</button>
+        <button (click)="abrirVentana()" class="boton-editar"><i class="fa-solid fa-user-pen icono-editar"></i></button>
     </div>
 </section>
 
-<app-editar-proyecto *ngIf="mostrarVentana" (cerrarVentana)="cerrarVentana()"></app-editar-proyecto>
+<app-editar-proyecto *ngIf="mostrarVentana" (validarProyectos)="validarFormulario($event)"></app-editar-proyecto>

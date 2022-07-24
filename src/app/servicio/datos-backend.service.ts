@@ -1,30 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Portfolio } from './Portfolio';
 import { Stack } from './Stack';
 import {Skills} from './Skills'
+import { Proyectos } from './Proyectos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatosBackendService {
 
-  portfolio?: Portfolio;
-
   constructor() {
-    this.portfolio = undefined;
   }
 
-  // obtenerDatosBackEnd() {
-  //   //enviar solicitud y guardar en session storage
-  // }
+  obtenerProyectos():Proyectos{
+    //obtener proyectos desde BE
+    return JSON.parse(<string>sessionStorage.getItem('proyectos'));
+  }
 
-  // obtenerChips(): string[] {
-  //   return this.obtenerPortfolio().stack.chips;
-  // }
-
-  // obtenerTarjetas():{ urlImagen: string, descripcion: string }[]{
-  //   return this.obtenerPortfolio().stack.tarjeta;
-  // }
+  establecerProyectos(proyectos:Proyectos){
+    //enviar proyectos a la BD
+    sessionStorage.setItem('proyectos', JSON.stringify(proyectos));
+  }
 
   obtenerSkills():Skills{
     //obtener stack desde BE
@@ -46,23 +41,5 @@ export class DatosBackendService {
     //enviar stack a la BD
     sessionStorage.setItem('stack', JSON.stringify(stack));
   }
-
-
-
-  // private obtenerObjStack(): Stack {
-  //   return JSON.parse(<string>sessionStorage.getItem('stack'));
-  // }
-
-  private obtenerPortfolio(): Portfolio {
-    return JSON.parse(<string>sessionStorage.getItem('portfolio'));
-  }
-
-  establecerChips(chips:string[]){
-
-  }
-
-  establecerPortfolio() {
-  }
-
 
 }

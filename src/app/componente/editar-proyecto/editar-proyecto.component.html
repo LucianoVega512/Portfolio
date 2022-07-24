@@ -1,16 +1,11 @@
 <div id="contenedor-editar-proyectos">
-    <form id="contenedor-formaulario">
+    <form id="contenedor-formaulario" [formGroup]="formulario">
         <div id="cabecera">
             <p>PROYECTOS</p>
         </div>
 
-        <!-- <div *ngFor="let proyecto of proyectos" [ngClass]="proyecto.descripcion">
-            <p style="margin: 0;">Descripcion 1</p>
-        </div> -->
-
-
         <div *ngFor="let proyecto of proyectos" [ngClass]="proyecto">
-            <input type="text" placeholder="" class="entrada" required>
+            <input type="text" placeholder="" class="entrada" required [formControlName]="proyecto">
             <label class="lbl-nombre">
                 <span class="txt-nombre">Descripcion</span>
             </label>
