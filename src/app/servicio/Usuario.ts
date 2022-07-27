@@ -1,7 +1,7 @@
 export interface Usuario{
     id: number;
-    nombre: string;
+    nombreUsuario: string;
     clave: string;
     token: string;
-    rol: string;
+    nombreAcercaDe: string;
 }

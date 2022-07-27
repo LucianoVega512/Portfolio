@@ -12,6 +12,7 @@ export class CabeceraComponent implements OnInit {
   @Output() abrirLogin = new EventEmitter<undefined>();
   
   acercaDe:AcercaDe;
+  
 
   constructor(private datos: DatosBackendService) {
     this.acercaDe = datos.obtenerAcercaDe();

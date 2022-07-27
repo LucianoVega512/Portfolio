@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Chip } from 'src/app/servicio/Chip';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
 import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 import { Stack } from 'src/app/servicio/Stack';
+import { Tarjeta } from 'src/app/servicio/Tarjeta';
 
 @Component({
   selector: 'app-stack',
@@ -17,12 +19,19 @@ export class StackComponent implements OnInit {
 
   stack: Stack;
 
+  tarjetas:Tarjeta[];
+  chips:Chip[];
+
+
   clases: string[] = ["contenedor-tarjeta1", "contenedor-tarjeta2", "contenedor-tarjeta3"];
 
   constructor(private datos: DatosBackendService, private jwt:EstadoJwtService) {
     this.mostrarVentanaStack = false;
 
     this.stack = datos.obtenerStack();
+
+    this.tarjetas = datos.obtenerTarjetas();
+    this.chips = datos.obtenerChips();
 
     this.esAdministrador = jwt.esAdministrador();
   }

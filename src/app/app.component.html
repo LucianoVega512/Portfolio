@@ -3,8 +3,8 @@
 <main *ngIf="iniciarPorfolio">
   <app-acerca-de></app-acerca-de>
   <app-stack></app-stack>
-  <app-skills></app-skills>
-  <app-proyectos></app-proyectos>
+<!--  <app-skills></app-skills>
+  <app-proyectos></app-proyectos> -->
 </main>
 
 <app-login *ngIf="mostrarLogin" (cerrarVentanaLogin)="cerrarLogin()" (estadoLogin)="estadoLogin($event)"></app-login>

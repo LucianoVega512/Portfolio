@@ -3,14 +3,46 @@ import { Stack } from './Stack';
 import { Skills } from './Skills'
 import { Proyectos } from './Proyectos';
 import { AcercaDe } from './AcercaDe';
+import { Portafolio } from './Portafolio';
+import { Usuario } from './Usuario';
+import { Tarjeta } from './Tarjeta';
+import { Chip } from './Chip';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatosBackendService {
 
+  portafolio?:Portafolio;
+
   constructor() {
   }
+
+  obtenerNombreAcercaDe():string{
+    return this.portafolio?.usuario.nombreAcercaDe as string;
+  }
+
+  establecerPortfolio(_portafolio:Portafolio){
+    this.portafolio = _portafolio;
+  }
+
+  obtenerUsuario():Usuario{
+    return this.portafolio?.usuario as Usuario;
+  }
+
+  establecerUsuario(usuario:Usuario){
+    this.portafolio!.usuario = usuario;
+  }
+
+  obtenerTarjetas():Tarjeta[]{
+    return this.portafolio!.tarjetas;
+  }
+
+  obtenerChips():Chip[]{
+    return this.portafolio!.chips;
+  }
+
+// -----------------------------------------------------------------
 
   obtenerAcercaDe(): AcercaDe {
     //obtener acerca-de desde BE
@@ -41,7 +73,6 @@ export class DatosBackendService {
     //enviar skills a la BD
     sessionStorage.setItem('skills', JSON.stringify(skills));
   }
-
 
   obtenerStack(): Stack {
     //obtener stack desde BE

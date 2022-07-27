@@ -1,5 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
+import { Usuario } from 'src/app/servicio/Usuario';
 
 @Component({
   selector: 'app-editar-acerca-de',
@@ -8,21 +11,54 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class EditarAcercaDeComponent implements OnInit {
 
-  @Output() validarAcercaDe: EventEmitter<FormGroup> = new EventEmitter();
+  @Output() validarAcercaDe: EventEmitter<Usuario> = new EventEmitter();
 
   formulario: FormGroup;
 
-  constructor() { 
+  usuario:Usuario;
+
+  constructor(private http: HttpClient, private datos: DatosBackendService) {
     this.formulario = new FormGroup({
       nombre: new FormControl('')
     })
+
+    this.usuario = datos.obtenerUsuario();
   }
 
   ngOnInit(): void {
   }
 
-  cerrarVentanaAcercaDe(){
-    this.validarAcercaDe.emit(this.formulario);
+  cerrarVentanaAcercaDe() {
+    // this.validarAcercaDe.emit(this.formulario);
+
+    // let datoFormulario: boolean = false;
+
+    if (!this.formulario.get("nombre")?.invalid) {
+      // this.acercaDe.nombre = formulario.get("nombre")?.value;
+      // datoFormulario = true;
+      let nombre:string = this.formulario.get("nombre")?.value;
+      let token:string = this.usuario.token;      
+
+      const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
+
+      console.log(this.usuario);
+
+      this.http.put<string>('api/modificar/acerca_de', this.usuario, cabecera).subscribe({
+        next: (n) => {
+          this.usuario.nombreAcercaDe = nombre;
+          this.validarAcercaDe.emit(this.usuario);
+        },
+        error: () => {
+          alert('credenciales invalidas');
+          this.validarAcercaDe.emit(this.usuario);
+        }
+      });
+    }
+
+    // if (datoFormulario) {
+    //   this.datos.establecerAcercaDe(this.acercaDe);
+    // }
+
   }
 
 }
