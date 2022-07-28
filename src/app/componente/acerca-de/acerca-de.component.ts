@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { AcercaDe } from 'src/app/servicio/AcercaDe';
+// import { FormGroup } from '@angular/forms';
+// import { AcercaDe } from 'src/app/servicio/AcercaDe';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
 import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 import { Usuario } from 'src/app/servicio/Usuario';

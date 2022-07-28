@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { AcercaDe } from 'src/app/servicio/AcercaDe';
+// import { AcercaDe } from 'src/app/servicio/AcercaDe';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
 
 @Component({
@@ -11,11 +11,11 @@ export class CabeceraComponent implements OnInit {
 
   @Output() abrirLogin = new EventEmitter<undefined>();
   
-  acercaDe:AcercaDe;
+  // acercaDe:AcercaDe;
   
 
   constructor(private datos: DatosBackendService) {
-    this.acercaDe = datos.obtenerAcercaDe();
+    // this.acercaDe = datos.obtenerAcercaDe();
   }
 
   ngOnInit(): void {

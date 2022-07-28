@@ -14,15 +14,15 @@ export class ProyectosComponent implements OnInit {
   mostrarVentana: boolean = false;
   esAdministrador:boolean;
 
-  proyectos:Proyectos;
+  proyectos:Proyectos = {} as Proyectos;
 
   imagen_actual: string = "";
   imagen_descripcion: string = "";
   indice_imagen: number = 0;
 
   constructor(private datos: DatosBackendService, private jwt:EstadoJwtService) {
-    this.proyectos = datos.obtenerProyectos();
-    this.imagen_actual = this.proyectos.urls[0];
+    // this.proyectos = datos.obtenerProyectos();
+    // this.imagen_actual = this.proyectos.urls[0];
     this.imagen_descripcion = this.proyectos.descripciones[0];
     this.esAdministrador = jwt.esAdministrador();
   }
@@ -68,7 +68,7 @@ export class ProyectosComponent implements OnInit {
     }
 
     if(datoFormulario){
-      this.datos.establecerProyectos(this.proyectos);
+      // this.datos.establecerProyectos(this.proyectos);
     }
 
     this.mostrarVentana = false;

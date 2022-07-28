@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Proyectos } from './Proyectos';
-import { AcercaDe } from './AcercaDe';
+// import { Proyectos } from './Proyectos';
 import { Portafolio } from './Portafolio';
 import { Usuario } from './Usuario';
 import { Tarjeta } from './Tarjeta';
@@ -59,25 +58,25 @@ export class DatosBackendService {
 
   // -----------------------------------------------------------------
 
-  obtenerAcercaDe(): AcercaDe {
-    //obtener acerca-de desde BE
-    return JSON.parse(<string>sessionStorage.getItem('acerca-de'));
-  }
+  // obtenerAcercaDe(): AcercaDe {
+  //   //obtener acerca-de desde BE
+  //   return JSON.parse(<string>sessionStorage.getItem('acerca-de'));
+  // }
 
-  establecerAcercaDe(acercaDe: AcercaDe) {
-    //enviar proyectos a la BD
-    sessionStorage.setItem('acerca-de', JSON.stringify(acercaDe));
-  }
+  // establecerAcercaDe(acercaDe: AcercaDe) {
+  //   //enviar proyectos a la BD
+  //   sessionStorage.setItem('acerca-de', JSON.stringify(acercaDe));
+  // }
 
-  obtenerProyectos(): Proyectos {
-    //obtener proyectos desde BE
-    return JSON.parse(<string>sessionStorage.getItem('proyectos'));
-  }
+  // obtenerProyectos(): Proyectos {
+  //   //obtener proyectos desde BE
+  //   return JSON.parse(<string>sessionStorage.getItem('proyectos'));
+  // }
 
-  establecerProyectos(proyectos: Proyectos) {
-    //enviar proyectos a la BD
-    sessionStorage.setItem('proyectos', JSON.stringify(proyectos));
-  }
+  // establecerProyectos(proyectos: Proyectos) {
+  //   //enviar proyectos a la BD
+  //   sessionStorage.setItem('proyectos', JSON.stringify(proyectos));
+  // }
 
   // obtenerSkills(): Skills {
   //   //obtener stack desde BE
