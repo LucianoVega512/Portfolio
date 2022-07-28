@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
+import { Tarjeta } from 'src/app/servicio/Tarjeta';
 
 @Component({
   selector: 'app-editar-stack',
@@ -8,8 +9,9 @@ import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
   styleUrls: ['./editar-stack.component.css']
 })
 export class EditarStackComponent implements OnInit {
-
+  
   @Output() validarFormulario = new EventEmitter<FormGroup>();
+  @Input() tarjeta:Tarjeta;
 
   formulario:FormGroup;
 
@@ -27,9 +29,12 @@ export class EditarStackComponent implements OnInit {
       descripcion3: new FormControl(''),
       chip: new FormControl('')
     });
+
+    this.tarjeta = <Tarjeta>{};
   }
 
   ngOnInit(): void {
+    console.log(this.tarjeta);
   }
 
   validarDatosStack(){    

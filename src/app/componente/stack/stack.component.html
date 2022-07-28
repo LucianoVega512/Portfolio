@@ -6,10 +6,11 @@
     <!-- <div *ngFor="let tarjeta of tarjetas; let i=index" [ngClass]="clases[i]"> -->
     <div *ngFor="let tarjeta of tarjetas; let i=index" [ngClass]="clases[i]">
         <div class="cabecera-tarjeta">
-            <img [src]="tarjeta.url" alt="" style="width: 60%;">
+            <img [src]="tarjeta.url" alt="" style="width: 50%;">
         </div>
 
-        <div class="texto-tarjeta">
+        <!-- <div class="texto-tarjeta"> -->
+        <div [ngClass]="{'texto-puntero':esAdministrador}" class="texto-tarjeta" (click)="editarTarjeta(i)">
             <p>{{tarjeta.descripcion}}</p>
         </div>
     </div>
@@ -17,13 +18,17 @@
     <div id="chip">
         <div *ngFor="let chip of chips let i=index">
             <p>{{chip.chipDescripcion}}</p>
-            <button *ngIf="true" (click)="removerChip(i)"><i class="fa-solid fa-circle-xmark icono-cerrar"></i></button>
+            <button *ngIf="esAdministrador" (click)="removerChip(i)"><i class="fa-solid fa-circle-xmark icono-cerrar"></i></button>
         </div>
     </div>
 
     <div id="boton-editar" *ngIf="esAdministrador">
-        <button (click)="abrirVentanaEdicion()" class="boton-editar"><i class="fa-solid fa-user-pen icono-editar"></i></button>
+        <button (click)="abrirVentanaEdicion()" class="boton-editar"><i
+                class="fa-solid fa-user-pen icono-editar"></i></button>
     </div>
 </section>
 
-<app-editar-stack *ngIf="mostrarVentanaStack" (validarFormulario)="validarFormulario($event)"></app-editar-stack>
+<app-editar-stack 
+    *ngIf="mostrarVentanaStack" 
+    (validarFormulario)="validarFormulario($event)"
+    [tarjeta]="tarjetaActual"></app-editar-stack>
