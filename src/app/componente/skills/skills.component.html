@@ -16,7 +16,7 @@
                 </div>
             </div> -->
 
-            <div [ngClass]="{'modificar-grafico':esAdministrador}" class="grafico-individual"
+            <div [ngClass]="{'puntero':esAdministrador}" class="grafico-individual"
                 *ngFor="let tecnologia of tecnologias; let i=index" (click)="editarTecnologia(i)">
 
                 <div class="grafico-individual-cabecera">

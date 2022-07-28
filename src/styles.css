@@ -81,3 +81,11 @@ form .entrada:valid +
     padding: 12px 10px 12px 10px;
     border-radius: 50%;
 }
+
+.puntero{
+    cursor: pointer;
+}
+
+.puntero:hover{
+    border: solid 1px #fff;
+}

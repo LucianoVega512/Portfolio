@@ -16,8 +16,6 @@
                          ". . chip chip chip chip chip chip chip boton . titulo"
                          ". . chip chip chip chip chip chip chip boton . titulo"
                          ". . . . . . . . . . . titulo";
-
-    /* grid-gap: 10px; */
 }
 
 #contenedor-stack > #contenedor-titulo {
@@ -71,13 +69,13 @@
     font-size: 16px;    
 }
 
-.texto-puntero{
+/* .texto-puntero{
     cursor: pointer;
 }
 
 .texto-puntero:hover{
     border: solid 1px #fff;
-}
+} */
 
 #contenedor-stack > #chip{
     grid-area: chip;

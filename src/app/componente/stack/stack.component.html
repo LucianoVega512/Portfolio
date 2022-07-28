@@ -10,13 +10,13 @@
         </div>
 
         <!-- <div class="texto-tarjeta"> -->
-        <div [ngClass]="{'texto-puntero':esAdministrador}" class="texto-tarjeta" (click)="editarTarjeta(i)">
+        <div [ngClass]="{'puntero':esAdministrador}" class="texto-tarjeta" (click)="editarTarjeta(i)">
             <p>{{tarjeta.descripcion}}</p>
         </div>
     </div>
 
     <div id="chip">
-        <div *ngFor="let chip of chips let i=index">
+        <div *ngFor="let chip of chips; let i=index">
             <p>{{chip.chipDescripcion}}</p>
             <button *ngIf="esAdministrador" (click)="removerChip(i)"><i
                     class="fa-solid fa-circle-xmark icono-cerrar"></i></button>

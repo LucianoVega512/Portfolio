@@ -1,13 +1,25 @@
-#contenedor-proyectos {
+#contenedor-proyectos{
     display: grid;
     height: 100vh;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
+
+    grid-template-areas: ". . . . . . . . . . . titulo"
+                         ". . imagen imagen imagen imagen imagen imagen imagen . . titulo"
+                         ". . imagen imagen imagen imagen imagen imagen imagen . . titulo"
+                         ". . imagen imagen imagen imagen imagen imagen imagen . . titulo"
+                         ". anterior imagen imagen imagen imagen imagen imagen imagen siguiente . titulo"
+                         ". anterior imagen imagen imagen imagen imagen imagen imagen siguiente . titulo"
+                         ". . imagen imagen imagen imagen imagen imagen imagen . . titulo"
+                         ". . imagen imagen imagen imagen imagen imagen imagen . . titulo"
+                         ". . imagen imagen imagen imagen imagen imagen imagen . . titulo"
+                         ". . texto texto texto texto texto texto texto . . titulo"
+                         ". . texto texto texto texto texto texto texto . . titulo"
+                         ". . . . . . . . . . . titulo";
 }
 
 #contenedor-proyectos > #contenedor-titulo{
-    grid-column: 12 / 13;
-    grid-row: 3 / 13;
+    grid-area: titulo;
     color: #fff;
     font-size: 50px;
     align-self: center;
@@ -15,20 +27,25 @@
 }
 
 #contenedor-proyectos > #contenedor-carrusel{
-    grid-column: 3 / 10;
-    grid-row: 2 / 10;
+    grid-area: imagen;
 }
 
-#contenedor-proyectos > #contenedor-carrusel > #contenedor-imagen-flexible{
+#contenedor-proyectos > #contenedor-carrusel > .contenedor-imagen-flexible{
     display: flex;
     height: 100%;
     justify-content: center;
-    border: solid 1px #fff;
 }
 
+/* .imagen-puntero{
+    cursor: pointer;
+}
+
+.texto-puntero:hover{
+    border: solid 1px #fff;
+} */
+
 #contenedor-proyectos > #boton-siguiente{
-    grid-column: 10 / 11;
-    grid-row: 5 / 7;
+    grid-area: siguiente;
 }
 
 .contenedor-boton-flexible{
@@ -36,17 +53,16 @@
     height: 100%;
     justify-content: center;
     align-items: center;
+    
 }
 
 #contenedor-proyectos > #boton-anterior{
-    grid-column: 2 / 3;
-    grid-row: 5 / 7;
+   grid-area: anterior;
 }
 
 #contenedor-proyectos > #descripcion-proyecto{
-    grid-column: 3 / 10;
-    grid-row: 10 / 12;
-    text-align: center;
+    grid-area: texto;
+     text-align: center;
     align-self: center;
     color: #fff;
     font-size: 20px;

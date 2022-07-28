@@ -4,15 +4,22 @@
             <p>PROYECTOS</p>
         </div>
 
-        <div *ngFor="let proyecto of proyectos" [ngClass]="proyecto">
+        <!-- <div *ngFor="let proyecto of proyectos" [ngClass]="proyecto">
             <input type="text" placeholder="" class="entrada" required [formControlName]="proyecto">
+            <label class="lbl-nombre">
+                <span class="txt-nombre">Descripcion</span>
+            </label>
+        </div> -->
+
+        <div class="descripcion1">
+            <input type="text" placeholder="" class="entrada" required formControlName="descripcion">
             <label class="lbl-nombre">
                 <span class="txt-nombre">Descripcion</span>
             </label>
         </div>
 
         <div id="boton-aceptar">
-            <button class="boton" (click)="cerrarVentanaProyectos()">Aceptar</button>
+            <button class="boton" (click)="enviarProyecto()">Aceptar</button>
         </div>
 
     </form>

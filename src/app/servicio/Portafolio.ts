@@ -5,7 +5,7 @@ export interface Portafolio {
 
     tarjetas: { id: number, url: string, descripcion: string }[];
 
-    descripciones: { id: number, tipo: string, descripcionProyecto: string }[];
+    descripciones: { id: number, url: string, descripcionProyecto: string }[];
 
     chips: { id: number, chipDescripcion: string }[];
 }       

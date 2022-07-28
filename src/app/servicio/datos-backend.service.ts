@@ -5,6 +5,7 @@ import { Usuario } from './Usuario';
 import { Tarjeta } from './Tarjeta';
 import { Chip } from './Chip';
 import { Tecnologia } from './Tecnologia';
+import { Descripcion } from './Descripcion';
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +55,10 @@ export class DatosBackendService {
 
   obtenerTecnologias():Tecnologia[]{
     return this.portafolio!.tecnologias;
+  }
+
+  obtenerDescripciones():Descripcion[]{
+    return this.portafolio!.descripciones;
   }
 
   // -----------------------------------------------------------------

@@ -1,5 +1,8 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
+import { Descripcion } from 'src/app/servicio/Descripcion';
 
 @Component({
   selector: 'app-editar-proyecto',
@@ -8,25 +11,45 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class EditarProyectoComponent implements OnInit {
 
-  @Output() validarProyectos: EventEmitter<FormGroup> = new EventEmitter();
+  @Output() guardarDescripcion: EventEmitter<Descripcion> = new EventEmitter();
+  @Input() descripcion:Descripcion; 
 
   formulario:FormGroup;
 
   proyectos: string[] = ["descripcion1", "descripcion2", "descripcion3"];
 
-  constructor() { 
+  constructor(private http: HttpClient, private datos: DatosBackendService) {
     this.formulario = new FormGroup({
-      descripcion1: new FormControl(''),
-      descripcion2: new FormControl(''),
-      descripcion3: new FormControl('')
-    })
+      descripcion: new FormControl('')
+    });
+
+    this.descripcion = {} as Descripcion;
   }
 
   ngOnInit(): void {
   }
 
-  cerrarVentanaProyectos() {
-    this.validarProyectos.emit(this.formulario);
+  enviarProyecto(){
+    if (!this.formulario.get("descripcion")?.invalid) {
+      this.descripcion.descripcionProyecto = this.formulario.get("descripcion")?.value;
+
+      let token: string = this.datos.obtenerToken();
+
+      const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
+
+      this.http.put<string>('api/modificar/descripcion', this.descripcion, cabecera).subscribe({
+        next: (n) => {
+          this.guardarDescripcion.emit(this.descripcion);
+        },
+        error: () => {
+          alert('credenciales invalidas');
+        }
+      });
+    }
   }
+
+  // cerrarVentanaProyectos() {
+  //   this.validarProyectos.emit(this.formulario);
+  // }
 
 }

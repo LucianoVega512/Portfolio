@@ -35,13 +35,13 @@
     border-radius: 20px; */
 }
 
-.modificar-grafico{
+/* .modificar-grafico{
     cursor: pointer;
 }
 
 .modificar-grafico:hover{
     border: solid 1px #fff;
-}
+} */
 
 #contenedor-skills>#contenedor-grafico>#contenedor-grafico-flexible>.grafico-individual>.grafico-individual-cabecera {
     display: flex;

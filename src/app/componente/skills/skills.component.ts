@@ -44,7 +44,7 @@ export class SkillsComponent implements OnInit {
   editarTecnologia(indice: number) {
     if (this.esAdministrador) {
 
-      // tarjeta a modificar
+      // tecnologia a modificar
       this.tecnologiaActual = this.tecnologias[indice];
       this.mostrarVentanaSkills = true;
     }
