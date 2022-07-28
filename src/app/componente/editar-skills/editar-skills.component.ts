@@ -1,5 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
+import { Tecnologia } from 'src/app/servicio/Tecnologia';
 // import { Skills } from 'src/app/servicio/Skills';
 
 @Component({
@@ -9,37 +12,52 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class EditarSkillsComponent implements OnInit {
 
-  @Output() validarFormulario = new EventEmitter<FormGroup>();
-  @Input() iniciarSkills:string[] = [];
+  @Output() guardarTecnologia = new EventEmitter<Tecnologia>();
+  @Input() tecnologia: Tecnologia;
 
-  formulario:FormGroup;
+  formulario: FormGroup;
 
 
-  configuraciones: {claseRango: string, nombreCampo: string }[] = [
-    {claseRango: "rango1", nombreCampo: "valor1" },
-    {claseRango: "rango2", nombreCampo: "valor2" },
-    {claseRango: "rango3", nombreCampo: "valor3" },
-    {claseRango: "rango4", nombreCampo: "valor4" },
-    {claseRango: "rango5", nombreCampo: "valor5" },
-    {claseRango: "rango6", nombreCampo: "valor6" }
+  configuraciones: { claseRango: string, nombreCampo: string }[] = [
+    { claseRango: "rango1", nombreCampo: "valor1" },
+    { claseRango: "rango2", nombreCampo: "valor2" },
+    { claseRango: "rango3", nombreCampo: "valor3" },
+    { claseRango: "rango4", nombreCampo: "valor4" },
+    { claseRango: "rango5", nombreCampo: "valor5" },
+    { claseRango: "rango6", nombreCampo: "valor6" }
   ];
 
-  constructor() { 
+  constructor(private http: HttpClient, private datos: DatosBackendService) {
     this.formulario = new FormGroup({
-      valor1: new FormControl(''),
-      valor2: new FormControl(''),
-      valor3: new FormControl(''),
-      valor4: new FormControl(''),
-      valor5: new FormControl(''),
-      valor6: new FormControl('')
-    })
+      valor: new FormControl('')
+    });
+
+    this.tecnologia = <Tecnologia>{};
   }
 
   ngOnInit(): void {
   }
 
-  validarDatosSkills(){
-    this.validarFormulario.emit(this.formulario);
+  enviarTecnologia(){
+    if (!this.formulario.get("valor")?.invalid) {
+      this.tecnologia.valor = this.formulario.get("valor")?.value;
+
+      let token: string = this.datos.obtenerToken();
+
+      const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
+
+      this.http.put<string>('api/modificar/tecnologia', this.tecnologia, cabecera).subscribe({
+        next: (n) => {
+          this.guardarTecnologia.emit(this.tecnologia);
+        },
+        error: () => {
+          alert('credenciales invalidas');
+        }
+      });
+    }
   }
+  // validarDatosSkills() {
+  //   this.validarFormulario.emit(this.formulario);
+  // }
 
 }

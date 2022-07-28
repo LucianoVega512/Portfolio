@@ -4,16 +4,22 @@
             <p>SKILLS</p>
         </div>
 
-        <div *ngFor="let configuracion of configuraciones; let i=index" [ngClass]="configuracion.claseRango">
+        <!-- <div *ngFor="let configuracion of configuraciones; let i=index" [ngClass]="configuracion.claseRango">
             <input type="number" placeholder="" class="entrada" min="1" max="100" required [formControlName]="configuracion.nombreCampo">
             <label class="lbl-nombre">
-                <!-- <span class="txt-nombre">{{configuracion.nombre}}</span> -->
                 <span class="txt-nombre">{{iniciarSkills[i]}}</span>
+            </label>
+        </div> -->
+
+        <div class="rango1">
+            <input type="number" placeholder="" class="entrada" min="1" max="100" required formControlName="valor">
+            <label class="lbl-nombre">
+                <span class="txt-nombre">Valor</span>
             </label>
         </div>
 
         <div id="boton-aceptar">
-            <button class="boton" (click)="validarDatosSkills()">Aceptar</button>
+            <button class="boton" (click)="enviarTecnologia()">Aceptar</button>
         </div> 
     </form>
 </div>

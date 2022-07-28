@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Skills } from './Skills'
 import { Proyectos } from './Proyectos';
 import { AcercaDe } from './AcercaDe';
 import { Portafolio } from './Portafolio';
 import { Usuario } from './Usuario';
 import { Tarjeta } from './Tarjeta';
 import { Chip } from './Chip';
+import { Tecnologia } from './Tecnologia';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +53,10 @@ export class DatosBackendService {
     return this.portafolio!.chips;
   }
 
+  obtenerTecnologias():Tecnologia[]{
+    return this.portafolio!.tecnologias;
+  }
+
   // -----------------------------------------------------------------
 
   obtenerAcercaDe(): AcercaDe {
@@ -75,13 +79,13 @@ export class DatosBackendService {
     sessionStorage.setItem('proyectos', JSON.stringify(proyectos));
   }
 
-  obtenerSkills(): Skills {
-    //obtener stack desde BE
-    return JSON.parse(<string>sessionStorage.getItem('skills'));
-  }
+  // obtenerSkills(): Skills {
+  //   //obtener stack desde BE
+  //   return JSON.parse(<string>sessionStorage.getItem('skills'));
+  // }
 
-  establecerSkills(skills: Skills) {
-    //enviar skills a la BD
-    sessionStorage.setItem('skills', JSON.stringify(skills));
-  }
+  // establecerSkills(skills: Skills) {
+  //   //enviar skills a la BD
+  //   sessionStorage.setItem('skills', JSON.stringify(skills));
+  // }
 }
