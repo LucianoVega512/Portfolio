@@ -5,16 +5,22 @@
             <p>STACK</p>
         </div>
         
-        <div *ngFor="let stack of stacks" [ngClass]="stack.claseTarjeta">
-            <input type="text" placeholder="" class="entrada" required [formControlName]="stack.nombreCampo">
-            <!-- <input type="text" placeholder="" name="nombre" class="entrada" required [(ngModel)]="stack.valorEntrada"> -->
+        <div class="tarjeta1">
+            <input type="text" class="entrada" required formControlName="descripcion">
             <label class="lbl-nombre">
-                <span class="txt-nombre">{{stack.span}}</span>
+                <span class="txt-nombre">Descripcion</span>
             </label>
         </div>
 
+        <!-- <div *ngFor="let stack of stacks" [ngClass]="stack.claseTarjeta">
+            <input type="text" placeholder="" class="entrada" required [formControlName]="stack.nombreCampo">
+            <label class="lbl-nombre">
+                <span class="txt-nombre">{{stack.span}}</span>
+            </label>
+        </div> -->
+
         <div id="boton-aceptar">
-            <button class="boton" (click)="validarDatosStack()">Aceptar</button>
+            <button class="boton" (click)="enviarTarjeta()">Aceptar</button>
         </div>
     </form>
 </div>

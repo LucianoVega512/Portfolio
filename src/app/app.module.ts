@@ -17,6 +17,7 @@ import { EditarAcercaDeComponent } from './componente/editar-acerca-de/editar-ac
 import { EditarStackComponent } from './componente/editar-stack/editar-stack.component';
 import { EditarSkillsComponent } from './componente/editar-skills/editar-skills.component';
 import { EditarProyectoComponent } from './componente/editar-proyecto/editar-proyecto.component';
+import { EditarChipComponent } from './componente/editar-chip/editar-chip.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { EditarProyectoComponent } from './componente/editar-proyecto/editar-pro
     EditarAcercaDeComponent,
     EditarStackComponent,
     EditarSkillsComponent,
-    EditarProyectoComponent
+    EditarProyectoComponent,
+    EditarChipComponent
   ],
   imports: [
     GaugeModule.forRoot(),

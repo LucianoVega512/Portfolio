@@ -41,8 +41,6 @@ export class EditarAcercaDeComponent implements OnInit {
 
       const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
 
-      console.log(this.usuario);
-
       this.http.put<string>('api/modificar/acerca_de', this.usuario, cabecera).subscribe({
         next: (n) => {
           this.usuario.nombreAcercaDe = nombre;

@@ -12,36 +12,48 @@ import { Chip } from './Chip';
 })
 export class DatosBackendService {
 
-  portafolio?:Portafolio;
+  portafolio?: Portafolio;
 
   constructor() {
   }
 
-  obtenerNombreAcercaDe():string{
+  obtenerNombreAcercaDe(): string {
     return this.portafolio?.usuario.nombreAcercaDe as string;
   }
 
-  establecerPortfolio(_portafolio:Portafolio){
+  obtenerToken(): string {
+    return this.portafolio?.usuario.token as string;
+  }
+
+  establecerPortfolio(_portafolio: Portafolio) {
     this.portafolio = _portafolio;
   }
 
-  obtenerUsuario():Usuario{
+  obtenerUsuario(): Usuario {
     return this.portafolio?.usuario as Usuario;
   }
 
-  establecerUsuario(usuario:Usuario){
+  establecerUsuario(usuario: Usuario) {
     this.portafolio!.usuario = usuario;
   }
 
-  obtenerTarjetas():Tarjeta[]{
+  establecerTarjeta(tarjeta: Tarjeta) {
+    this.portafolio!.tarjetas.forEach(t => {
+      if(t.id == tarjeta.id){
+        t.descripcion = tarjeta.descripcion;
+      }
+    });
+  }
+
+  obtenerTarjetas(): Tarjeta[] {
     return this.portafolio!.tarjetas;
   }
 
-  obtenerChips():Chip[]{
+  obtenerChips(): Chip[] {
     return this.portafolio!.chips;
   }
 
-// -----------------------------------------------------------------
+  // -----------------------------------------------------------------
 
   obtenerAcercaDe(): AcercaDe {
     //obtener acerca-de desde BE

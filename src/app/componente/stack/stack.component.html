@@ -18,17 +18,18 @@
     <div id="chip">
         <div *ngFor="let chip of chips let i=index">
             <p>{{chip.chipDescripcion}}</p>
-            <button *ngIf="esAdministrador" (click)="removerChip(i)"><i class="fa-solid fa-circle-xmark icono-cerrar"></i></button>
+            <button *ngIf="esAdministrador" (click)="removerChip(i)"><i
+                    class="fa-solid fa-circle-xmark icono-cerrar"></i></button>
         </div>
     </div>
 
     <div id="boton-editar" *ngIf="esAdministrador">
-        <button (click)="abrirVentanaEdicion()" class="boton-editar"><i
-                class="fa-solid fa-user-pen icono-editar"></i></button>
+        <button (click)="abrirVentanaCrearChip()" class="boton-editar">
+            <i class="fa-solid fa-user-pen icono-editar"></i>
+        </button>
     </div>
 </section>
 
-<app-editar-stack 
-    *ngIf="mostrarVentanaStack" 
-    (validarFormulario)="validarFormulario($event)"
-    [tarjeta]="tarjetaActual"></app-editar-stack>
+<app-editar-stack *ngIf="mostrarVentanaStack" (guardarTarjeta)="guardarTarjeta($event)" [tarjeta]="tarjetaActual"></app-editar-stack>
+
+<app-editar-chip *ngIf="mostrarCrearChip" (guardarChip)="guardarChip($event)"></app-editar-chip>

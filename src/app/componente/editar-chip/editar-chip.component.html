@@ -1,0 +1,18 @@
+<div id="contenedor-editar-chip">
+    <form id="contenedor-formaulario" [formGroup]="formulario">
+      <div id="cabecera">
+        <p>CREAR CHIP</p>
+      </div>
+  
+      <div id="chip">
+        <input type="text" placeholder="" class="entrada" required formControlName= "chip">
+        <label class="lbl-nombre">
+          <span class="txt-nombre">Nombre</span>
+        </label>
+      </div>
+  
+      <div id="boton-aceptar">
+        <button class="boton" (click)="enviarChip()">Aceptar</button>
+      </div>
+    </form>
+  </div>
