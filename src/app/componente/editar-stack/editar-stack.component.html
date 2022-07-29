@@ -1,18 +1,19 @@
-<div id="contenedor-editar-stack">
-    <form id="contenedor-formaulario" [formGroup]="formulario">
-        <div id="cabecera">
+<div class="contenedor-editar">
+    <form class="contenedor-editar-formaulario" [formGroup]="formulario">
+        <div class="contenedor-editar-formaulario-cabecera">
             <p>STACK</p>
         </div>
-        
-        <div class="tarjeta1">
+
+        <div class="contenedor-editar-formaulario-entrada">
             <input type="text" class="entrada" required formControlName="descripcion">
             <label class="lbl-nombre">
                 <span class="txt-nombre">Descripcion</span>
             </label>
         </div>
 
-        <div id="boton-aceptar">
+        <div class="contenedor-editar-formaulario-boton">
             <button class="boton" (click)="enviarTarjeta()">Aceptar</button>
         </div>
     </form>
 </div>
+

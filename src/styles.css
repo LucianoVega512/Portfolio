@@ -89,3 +89,55 @@ form .entrada:valid +
 .puntero:hover{
     border: solid 1px #fff;
 }
+
+/* --------------------------------------- */
+.contenedor-editar {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.4);
+    display: grid;
+    height: 100vh;
+    width: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.contenedor-editar-formaulario {
+    background-color: #154360;
+    grid-column: 3 / 5;
+    grid-row: 2 / 5;
+    border: solid 1px #ccc;
+
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+
+    grid-template-areas: "cabecera cabecera cabecera cabecera cabecera cabecera"
+                         ". entrada entrada entrada entrada ."
+                         ". entrada entrada entrada entrada ."
+                         ". . . . . ."
+                         ". boton boton boton boton .";
+
+}
+
+.contenedor-editar-formaulario-cabecera {
+    background-color: #263238;
+    grid-area: cabecera;
+    font-size: 20px;
+    text-align: center;
+    align-self: center;
+    color: #fff;
+}
+
+.contenedor-editar-formaulario-entrada {
+    grid-area: entrada;
+    position: relative;
+    align-self: end;
+}
+
+.contenedor-editar-formaulario-boton {
+    grid-area: boton;
+}

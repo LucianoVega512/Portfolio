@@ -1,18 +1,19 @@
-<div id="contenedor-editar-skills">
-    <form id="contenedor-formaulario" [formGroup]="formulario">
-        <div id="cabecera">
+<div class="contenedor-editar">
+    <form class="contenedor-editar-formaulario" [formGroup]="formulario">
+        <div class="contenedor-editar-formaulario-cabecera">
             <p>SKILLS</p>
         </div>
 
-        <div class="rango1">
+        <div class="contenedor-editar-formaulario-entrada">
             <input type="number" placeholder="" class="entrada" min="1" max="100" required formControlName="valor">
             <label class="lbl-nombre">
                 <span class="txt-nombre">Valor</span>
             </label>
         </div>
 
-        <div id="boton-aceptar">
+        <div class="contenedor-editar-formaulario-boton">
             <button class="boton" (click)="enviarTecnologia()">Aceptar</button>
-        </div> 
+        </div>
     </form>
 </div>
+

@@ -1,17 +1,17 @@
-<div id="contenedor-editar-acerca-de">
-  <form id="contenedor-formaulario" [formGroup]="formulario">
-    <div id="cabecera">
+<div class="contenedor-editar">
+  <form class="contenedor-editar-formaulario" [formGroup]="formulario">
+    <div class="contenedor-editar-formaulario-cabecera">
       <p>ACERCA DE</p>
     </div>
 
-    <div id="nombre">
+    <div class="contenedor-editar-formaulario-entrada">
       <input type="text" placeholder="" class="entrada" required formControlName= "nombre">
       <label class="lbl-nombre">
         <span class="txt-nombre">Nombre</span>
       </label>
     </div>
 
-    <div id="boton-aceptar">
+    <div class="contenedor-editar-formaulario-boton">
       <button class="boton" (click)="cerrarVentanaAcercaDe()">Aceptar</button>
     </div>
   </form>
