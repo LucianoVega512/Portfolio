@@ -31,17 +31,7 @@
     flex-direction: column;
     width: 32%;
     margin: 5px;
-    /* border: solid 1px #fff;
-    border-radius: 20px; */
 }
-
-/* .modificar-grafico{
-    cursor: pointer;
-}
-
-.modificar-grafico:hover{
-    border: solid 1px #fff;
-} */
 
 #contenedor-skills>#contenedor-grafico>#contenedor-grafico-flexible>.grafico-individual>.grafico-individual-cabecera {
     display: flex;
@@ -56,21 +46,9 @@
     color: #fff;
 }
 
-/* .orientacion-titulo {
-    writing-mode: vertical-lr;
-    margin: 0;
-} */
-
  mwl-gauge {
     width: 200px;
     height: 200px;
     display: block;
 }
-
-/* #contenedor-skills > #boton-editar{
-    grid-column: 12 / 13;
-    grid-row: 1 / 3;
-    align-self: center;
-    justify-self: center;
-} */
 

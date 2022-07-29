@@ -43,33 +43,11 @@
     color: #fff;
 }
 
-/* #contenedor-editar-skills>#contenedor-formaulario>.etiqueta1 {
-    grid-area: etiqueta1;
-    align-self: end;
-    font-size: 14px;
-    color: lightgray;
-} */
-
 #contenedor-editar-skills>#contenedor-formaulario>.rango1 {
     grid-area: rango1;
     position: relative;
     align-self: end;
 }
-
-/* #contenedor-editar-skills>#contenedor-formaulario>.valor1 {
-    grid-area: valor1;
-    justify-self: center;
-    align-self: center;
-    font-size: 22px;
-    color: lightgray;
-}
-
-#contenedor-editar-skills>#contenedor-formaulario>.etiqueta2 {
-    grid-area: etiqueta2;
-    align-self: end;
-    font-size: 14px;
-    color: lightgray;
-} */
 
 #contenedor-editar-skills>#contenedor-formaulario>.rango2 {
     grid-area: rango2;
@@ -77,41 +55,11 @@
     align-self: end;
 }
 
-/* #contenedor-editar-skills>#contenedor-formaulario>.valor2 {
-    grid-area: valor2;
-    justify-self: center;
-    align-self: center;
-    font-size: 22px;
-    color: lightgray;
-}
-
-#contenedor-editar-skills>#contenedor-formaulario>.etiqueta3 {
-    grid-area: etiqueta3;
-    align-self: end;
-    font-size: 14px;
-    color: lightgray;
-} */
-
 #contenedor-editar-skills>#contenedor-formaulario>.rango3 {
     grid-area: rango3;
     position: relative;
     align-self: end;
 }
-
-/* #contenedor-editar-skills>#contenedor-formaulario>.valor3 {
-    grid-area: valor3;
-    justify-self: center;
-    align-self: center;
-    font-size: 22px;
-    color: lightgray;
-}
-
-#contenedor-editar-skills>#contenedor-formaulario>.etiqueta4 {
-    grid-area: etiqueta4;
-    align-self: end;
-    font-size: 14px;
-    color: lightgray;
-} */
 
 #contenedor-editar-skills>#contenedor-formaulario>.rango4 {
     grid-area: rango4;
@@ -119,55 +67,17 @@
     align-self: end;
 }
 
-/* #contenedor-editar-skills>#contenedor-formaulario>.valor4 {
-    grid-area: valor4;
-    justify-self: center;
-    align-self: center;
-    font-size: 22px;
-    color: lightgray;
-}
-
-#contenedor-editar-skills>#contenedor-formaulario>.etiqueta5 {
-    grid-area: etiqueta5;
-    align-self: end;
-    font-size: 14px;
-    color: lightgray;
-} */
-
 #contenedor-editar-skills>#contenedor-formaulario>.rango5 {
     grid-area: rango5;
     position: relative;
     align-self: end;
 }
 
-/* #contenedor-editar-skills>#contenedor-formaulario>.valor5 {
-    grid-area: valor5;
-    justify-self: center;
-    align-self: center;
-    font-size: 22px;
-    color: lightgray;
-}
-
-#contenedor-editar-skills>#contenedor-formaulario>.etiqueta6 {
-    grid-area: etiqueta6;
-    align-self: end;
-    font-size: 14px;
-    color: lightgray;
-} */
-
 #contenedor-editar-skills>#contenedor-formaulario>.rango6 {
     grid-area: rango6;
     position: relative;
     align-self: end;
 }
-
-/* #contenedor-editar-skills>#contenedor-formaulario>.valor6 {
-    grid-area: valor6;
-    justify-self: center;
-    align-self: center;
-    font-size: 22px;
-    color: lightgray;
-} */
 
 #contenedor-editar-skills>#contenedor-formaulario>#boton-aceptar {
     grid-area: boton;

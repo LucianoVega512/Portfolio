@@ -22,7 +22,6 @@
     grid-area: titulo;
     color: #fff;
     font-size: 50px;
-    /* padding: 0; */
     align-self: center;
     justify-self: center;
 }
@@ -36,7 +35,6 @@
 
 #contenedor-stack > .contenedor-tarjeta2{
     grid-area: tarjeta2;
-    /* border: solid 1px #fff; */
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -44,7 +42,6 @@
 
 #contenedor-stack > .contenedor-tarjeta3{
     grid-area: tarjeta3;
-    /* border: solid 1px #fff; */
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -69,14 +66,6 @@
     font-size: 16px;    
 }
 
-/* .texto-puntero{
-    cursor: pointer;
-}
-
-.texto-puntero:hover{
-    border: solid 1px #fff;
-} */
-
 #contenedor-stack > #chip{
     grid-area: chip;
     
@@ -93,14 +82,11 @@
     
     text-align: center;
     margin: 5px 10px 0 0;
-    /* border: solid 1px #fff; */
 }
 
 #contenedor-stack > #chip > div > p{
     font-size: 15px;
-    /* padding: 0 10px 0 10px; */
     margin: 10px;
-    /* text-align: center; */
     color: #fff;
 }
 
@@ -122,18 +108,3 @@
     align-self: center;
     justify-self: center;
 }
-
-/* #contenedor-stack > #boton-editar > button{
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-} */
-
-/* .icono-editar{
-    color: #fff;
-    font-size: 28px;
-    border: solid 1px #fff;
-    padding: 12px 10px 12px 10px;
-    border-radius: 50%;
-} */

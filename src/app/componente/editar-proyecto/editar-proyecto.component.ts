@@ -47,9 +47,4 @@ export class EditarProyectoComponent implements OnInit {
       });
     }
   }
-
-  // cerrarVentanaProyectos() {
-  //   this.validarProyectos.emit(this.formulario);
-  // }
-
 }

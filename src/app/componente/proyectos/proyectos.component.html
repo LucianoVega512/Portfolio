@@ -3,13 +3,8 @@
         <p class="orientacion-titulo">PROYECTOS</p>
     </div>
 
-    <!-- <div id="contenedor-carrusel">
-        <div id="contenedor-imagen-flexible">
-            <img [src]="imagen_actual" style="width: 50%;" alt="">
-        </div>
-    </div> -->
     <div id="contenedor-carrusel" [ngSwitch]="imagen">
-        <!-- <div class="contenedor-imagen-flexible" *ngFor="let descripcion of descripciones;let i=index"> -->
+
         <div [ngClass]="{'puntero':esAdministrador}" class="contenedor-imagen-flexible" *ngSwitchCase="'0'"
             (click)="editarProyecto(descripciones[0])">
             <img [src]="descripciones[0].url" style="width: 50%;" alt="">
@@ -24,10 +19,6 @@
             (click)="editarProyecto(descripciones[2])">
             <img [src]="descripciones[2].url" style="width: 50%;" alt="">
         </div>
-
-        <!-- <div id="descripcion-proyecto" *ngFor="let descripcion of descripciones">
-            {{descripcion.descripcionProyecto}}
-        </div> -->
     </div>
 
     <div id="boton-siguiente">
@@ -46,10 +37,6 @@
     <div id="descripcion-proyecto">
         {{descripciones[indice_imagen].descripcionProyecto}}
     </div>
-
-    <!-- <div id="boton-editar" *ngIf="esAdministrador">
-        <button (click)="abrirVentana()" class="boton-editar"><i class="fa-solid fa-user-pen icono-editar"></i></button>
-    </div> -->
 </section>
 
 <app-editar-proyecto *ngIf="mostrarVentanaProyecto" (guardarDescripcion)="guardarDescripcion($event)"

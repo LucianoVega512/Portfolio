@@ -56,8 +56,12 @@ export class StackComponent implements OnInit {
 
   // Ver esta linea 
   guardarTarjeta(tarjeta: Tarjeta) {
-    this.datos.establecerTarjeta(tarjeta);
-    this.tarjetas = this.datos.obtenerTarjetas();
+    this.tarjetas.forEach(t => {
+      if (t.id == tarjeta.id) {
+        t.descripcion = tarjeta.descripcion;
+      }
+    });
+
     this.mostrarVentanaStack = false;
   }
 
@@ -67,35 +71,14 @@ export class StackComponent implements OnInit {
     this.mostrarCrearChip = false;
   }
 
-  // abrirVentanaEditarTarjeta() {
-  // tarjeta: { urlImagen: string, descripcion: string }[];
-  // chips: string[];
-  // let s:Stack = {tarjeta:[{"urlImagen":"./assets/angular.png","descripcion":"Descripcion tarjeta 1"},{"urlImagen":"./assets/spring.png","descripcion":"Descripcion tarjeta 2"},{"urlImagen":"./assets/mysql.png","descripcion":"Descripcion tarjeta 3"}],chips:["Prime NG","Git/GitHub","Scrum","Ng2-Charts","Font Awesome","CSS-Grid","JWT","Java 11"]};
-  // sessionStorage.setItem('stack', JSON.stringify(s));
-
-  //   this.mostrarVentanaStack = true;
-  // }
-
   abrirVentanaCrearChip() {
     this.mostrarCrearChip = true;
   }
 
   removerChip(indice: number) {
-
-    // this.http.request('DELETE', url, {
-    //   headers: new HttpHeaders({
-    //     'Content-Type': 'application/json',
-    //   }),
-    //   body: { foo: bar }
-    // });
-
-
     let token: string = this.datos.obtenerToken();
-
-    // let cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
     let cabecera: HttpHeaders = new HttpHeaders({ 'Authorization': `${token}` });
 
-    // this.http.request('DELETE', 'api/eliminar/chip', cabecera, body:this.chips[indice]).subscribe({
     this.http.delete('api/eliminar/chip', { headers: cabecera, body: this.chips[indice] }).subscribe({
       next: (n) => {
         this.chips.splice(indice, 1);
@@ -103,18 +86,6 @@ export class StackComponent implements OnInit {
       error: () => {
         alert('credenciales invalidas');
       }
-    }
-    );
-
-    // this.http.delete<string>('api/eliminar/chip/', this.chips[indice], cabecera).subscribe({
-    //   next: (n) => {
-    //     
-    //   },
-    //   error: () => {
-    //     alert('credenciales invalidas');
-    //   }
-    // });
-    // }
-
+    });
   }
 }

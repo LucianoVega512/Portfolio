@@ -3,7 +3,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
 import { Tecnologia } from 'src/app/servicio/Tecnologia';
-// import { Skills } from 'src/app/servicio/Skills';
 
 @Component({
   selector: 'app-editar-skills',
@@ -16,16 +15,6 @@ export class EditarSkillsComponent implements OnInit {
   @Input() tecnologia: Tecnologia;
 
   formulario: FormGroup;
-
-
-  configuraciones: { claseRango: string, nombreCampo: string }[] = [
-    { claseRango: "rango1", nombreCampo: "valor1" },
-    { claseRango: "rango2", nombreCampo: "valor2" },
-    { claseRango: "rango3", nombreCampo: "valor3" },
-    { claseRango: "rango4", nombreCampo: "valor4" },
-    { claseRango: "rango5", nombreCampo: "valor5" },
-    { claseRango: "rango6", nombreCampo: "valor6" }
-  ];
 
   constructor(private http: HttpClient, private datos: DatosBackendService) {
     this.formulario = new FormGroup({
@@ -56,8 +45,4 @@ export class EditarSkillsComponent implements OnInit {
       });
     }
   }
-  // validarDatosSkills() {
-  //   this.validarFormulario.emit(this.formulario);
-  // }
-
 }

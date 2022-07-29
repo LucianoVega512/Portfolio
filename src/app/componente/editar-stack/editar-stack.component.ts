@@ -25,10 +25,7 @@ export class EditarStackComponent implements OnInit {
 
   constructor(private http: HttpClient, private datos: DatosBackendService) {
     this.formulario = new FormGroup({
-      descripcion: new FormControl(''),
-      // descripcion2: new FormControl(''),
-      // descripcion3: new FormControl(''),
-      // chip: new FormControl('')
+      descripcion: new FormControl('')
     });
 
     this.tarjeta = <Tarjeta>{};
@@ -54,7 +51,4 @@ export class EditarStackComponent implements OnInit {
       });
     }
   }
-
-
-
 }

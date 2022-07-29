@@ -36,14 +36,6 @@
     justify-content: center;
 }
 
-/* .imagen-puntero{
-    cursor: pointer;
-}
-
-.texto-puntero:hover{
-    border: solid 1px #fff;
-} */
-
 #contenedor-proyectos > #boton-siguiente{
     grid-area: siguiente;
 }

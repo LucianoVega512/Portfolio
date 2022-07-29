@@ -1,6 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-// import { FormGroup } from '@angular/forms';
-// import { AcercaDe } from 'src/app/servicio/AcercaDe';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
 import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 import { Usuario } from 'src/app/servicio/Usuario';
@@ -18,7 +16,6 @@ export class AcercaDeComponent implements OnInit {
   nombreAcercaDe: string = '';
 
   constructor(private datos: DatosBackendService, private jwt:EstadoJwtService) {
-    // this.acercaDe = datos.obtenerAcercaDe();  
     this.nombreAcercaDe = datos.obtenerNombreAcercaDe();
     
     this.esAdministrador = jwt.esAdministrador();
@@ -32,16 +29,6 @@ export class AcercaDeComponent implements OnInit {
   }
 
   validarAcercaDe(usuario: Usuario) {
-  //   let datoFormulario: boolean = false;
-
-  //   if (!formulario.get("nombre")?.invalid) {
-  //     this.acercaDe.nombre = formulario.get("nombre")?.value;
-  //     datoFormulario = true;
-  //   }
-
-  //   if (datoFormulario) {
-  //     this.datos.establecerAcercaDe(this.acercaDe);
-  //   }
     this.nombreAcercaDe = usuario.nombreAcercaDe;
 
     this.datos.establecerUsuario(usuario);

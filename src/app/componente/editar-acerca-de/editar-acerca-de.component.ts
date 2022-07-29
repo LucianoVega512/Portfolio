@@ -29,13 +29,7 @@ export class EditarAcercaDeComponent implements OnInit {
   }
 
   cerrarVentanaAcercaDe() {
-    // this.validarAcercaDe.emit(this.formulario);
-
-    // let datoFormulario: boolean = false;
-
     if (!this.formulario.get("nombre")?.invalid) {
-      // this.acercaDe.nombre = formulario.get("nombre")?.value;
-      // datoFormulario = true;
       let nombre:string = this.formulario.get("nombre")?.value;
       let token:string = this.usuario.token;      
 
@@ -52,11 +46,6 @@ export class EditarAcercaDeComponent implements OnInit {
         }
       });
     }
-
-    // if (datoFormulario) {
-    //   this.datos.establecerAcercaDe(this.acercaDe);
-    // }
-
   }
 
 }

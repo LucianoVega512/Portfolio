@@ -1,6 +1,5 @@
 <div id="contenedor-editar-stack">
     <form id="contenedor-formaulario" [formGroup]="formulario">
-    <!-- <form id="contenedor-formaulario"> -->
         <div id="cabecera">
             <p>STACK</p>
         </div>
@@ -11,13 +10,6 @@
                 <span class="txt-nombre">Descripcion</span>
             </label>
         </div>
-
-        <!-- <div *ngFor="let stack of stacks" [ngClass]="stack.claseTarjeta">
-            <input type="text" placeholder="" class="entrada" required [formControlName]="stack.nombreCampo">
-            <label class="lbl-nombre">
-                <span class="txt-nombre">{{stack.span}}</span>
-            </label>
-        </div> -->
 
         <div id="boton-aceptar">
             <button class="boton" (click)="enviarTarjeta()">Aceptar</button>

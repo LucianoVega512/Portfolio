@@ -2,14 +2,12 @@
     <div id="contenedor-titulo">
         <p class="orientacion-titulo">STACK</p>
     </div>
-
-    <!-- <div *ngFor="let tarjeta of tarjetas; let i=index" [ngClass]="clases[i]"> -->
+    
     <div *ngFor="let tarjeta of tarjetas; let i=index" [ngClass]="clases[i]">
         <div class="cabecera-tarjeta">
             <img [src]="tarjeta.url" alt="" style="width: 50%;">
         </div>
-
-        <!-- <div class="texto-tarjeta"> -->
+        
         <div [ngClass]="{'puntero':esAdministrador}" class="texto-tarjeta" (click)="editarTarjeta(i)">
             <p>{{tarjeta.descripcion}}</p>
         </div>

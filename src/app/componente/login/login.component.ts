@@ -1,5 +1,4 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { timeout } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -16,12 +15,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(){
-    // setTimeout(() => {
-      this.estadoLogin.emit(true);  
-      
-    // }, 3000);
-    
+  login() {
+    this.estadoLogin.emit(true);
     this.cerrarVentanaLogin.emit(true);
   }
 

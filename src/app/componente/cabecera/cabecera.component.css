@@ -22,8 +22,6 @@
 #contenedor-cabecera > #contenedor-boton-editar {
     grid-column: 5 / 6;
     grid-row: 1 / 2;
-    /* align-self: center;
-    justify-self: center; */
 }
 
 #contenedor-cabecera > #contenedor-boton-login{

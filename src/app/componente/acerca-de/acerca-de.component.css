@@ -57,16 +57,9 @@ p{
 }
 
 #contenedor-acerca-de > #contenedor-titulo{
-    /* grid-column: 12 / 13;
-    grid-row: 3 / 13; */
     grid-area: titulo;
     color: #fff;
     font-size: 50px;
     align-self: center;
     justify-self: center;
 }
-
-/* .orientacion-titulo {
-    writing-mode: vertical-lr; 
-    margin: 0;
-} */
