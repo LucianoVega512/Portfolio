@@ -46,7 +46,6 @@ export class AdministradorComponent implements OnInit {
           this.esEditable.emit(false);
         }
       });
-      // this.esEditable.emit(true);
     }
   }
 }

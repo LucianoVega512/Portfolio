@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +9,22 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   @Output() cerrarVentanaLogin = new EventEmitter<boolean>();
-  @Output() estadoLogin = new EventEmitter<boolean>();
+  @Output() enviarLogin = new EventEmitter<FormGroup>();
 
-  constructor() { }
+  formulario: FormGroup;
+
+  constructor() {
+    this.formulario = new FormGroup({
+      usuario: new FormControl(''),
+      clave: new FormControl('')
+    })
+  }
 
   ngOnInit(): void {
   }
 
   login() {
-    this.estadoLogin.emit(true);
+    this.enviarLogin.emit(this.formulario);
     this.cerrarVentanaLogin.emit(true);
   }
 
