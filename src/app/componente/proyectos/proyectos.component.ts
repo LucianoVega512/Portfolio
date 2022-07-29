@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
 import { Descripcion } from 'src/app/servicio/Descripcion';
-import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -11,7 +10,7 @@ import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 export class ProyectosComponent implements OnInit {
 
   mostrarVentanaProyecto: boolean;
-  esAdministrador: boolean;
+  esAdministrador: boolean = false;
 
   descripciones: Descripcion[];
   descripcionActual: Descripcion;
@@ -22,8 +21,12 @@ export class ProyectosComponent implements OnInit {
   imagen_descripcion: string = "";
   indice_imagen: number = 0;
 
-  constructor(private datos: DatosBackendService, private jwt: EstadoJwtService) {
-    this.esAdministrador = jwt.esAdministrador();
+  constructor(private datos: DatosBackendService) {
+    datos.obtenerEditable().subscribe({
+      next:(b)=>{        
+        this.esAdministrador = b;
+      }
+    });
 
     this.descripciones = datos.obtenerDescripciones();
     this.descripcionActual = {} as Descripcion;

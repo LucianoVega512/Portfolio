@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
-import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 import { Tecnologia } from 'src/app/servicio/Tecnologia';
 
 
@@ -13,17 +12,23 @@ export class SkillsComponent implements OnInit {
 
   mostrarVentanaSkills: boolean;
 
-  esAdministrador: boolean;
+  esAdministrador: boolean = false;
 
   tecnologiaActual: Tecnologia;
   tecnologias: Tecnologia[];
 
-  constructor(private datos: DatosBackendService, private jwt: EstadoJwtService) {
+  constructor(private datos: DatosBackendService) {
+    datos.obtenerEditable().subscribe({
+      next:(b)=>{
+        
+        this.esAdministrador = b;
+        console.log(this.esAdministrador);
+      }
+    });
+
     this.mostrarVentanaSkills = false;
 
     this.tecnologiaActual = {} as Tecnologia;
-
-    this.esAdministrador = jwt.esAdministrador();
 
     this.tecnologias = datos.obtenerTecnologias();
   }

@@ -8,7 +8,7 @@
             <i class="fa-brands fa-linkedin-in icono-redes"></i>
             <i class="fa-brands fa-github icono-redes"></i>
             <i class="fa-brands fa-linkedin-in icono-redes"></i>
-            <i class="fa-brands fa-linkedin-in icono-redes"></i>
+            <button class="boton-editar" *ngIf="inicioSesion" (click)="abrirVentanaAdmin()"><i class="fa-solid fa-user-pen icono-redes"></i></button>
         </div>
 
         <div id="contenedor-banner">
@@ -22,3 +22,5 @@
         </div>
     </div>
 </header>
+
+<app-administrador *ngIf="cerrarVentanaAdmin" (esEditable)="esEditable($event)"></app-administrador>

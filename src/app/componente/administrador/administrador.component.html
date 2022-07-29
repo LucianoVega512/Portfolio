@@ -1,0 +1,25 @@
+<div id="contenedor-administrador">
+    <form id="contenedor-formaulario" [formGroup]="formulario">
+      <div id="cabecera">
+        <p>ADMINISTRAR</p>
+      </div>
+  
+      <div id="usuario">
+        <input type="text" placeholder="" class="entrada" required formControlName= "usuario">
+        <label class="lbl-nombre">
+          <span class="txt-nombre">Usuario</span>
+        </label>
+      </div>
+
+      <div id="clave">
+        <input type="text" placeholder="" class="entrada" required formControlName= "clave">
+        <label class="lbl-nombre">
+          <span class="txt-nombre">Clave</span>
+        </label>
+      </div>
+  
+      <div id="boton-aceptar">
+        <button class="boton" (click)="enviarCredenciales()">Aceptar</button>
+      </div>
+    </form>
+  </div>

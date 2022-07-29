@@ -5,6 +5,7 @@ import { Tarjeta } from './Tarjeta';
 import { Chip } from './Chip';
 import { Tecnologia } from './Tecnologia';
 import { Descripcion } from './Descripcion';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,19 @@ export class DatosBackendService {
 
   portafolio?: Portafolio;
 
+  // esEditable: boolean;
+
+  subject: Subject<boolean> = new Subject();
+
   constructor() {
+  }
+
+  obtenerEditable(): Observable<boolean> {
+    return this.subject.asObservable();
+  }
+
+  subscribirEditable(estado:boolean){    
+    this.subject.next(estado);
   }
 
   obtenerNombreAcercaDe(): string {
@@ -44,11 +57,11 @@ export class DatosBackendService {
     return this.portafolio!.chips;
   }
 
-  obtenerTecnologias():Tecnologia[]{
+  obtenerTecnologias(): Tecnologia[] {
     return this.portafolio!.tecnologias;
   }
 
-  obtenerDescripciones():Descripcion[]{
+  obtenerDescripciones(): Descripcion[] {
     return this.portafolio!.descripciones;
   }
 }

@@ -2,7 +2,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Chip } from 'src/app/servicio/Chip';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
-import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 import { Tarjeta } from 'src/app/servicio/Tarjeta';
 
 @Component({
@@ -16,9 +15,7 @@ export class StackComponent implements OnInit {
 
   mostrarCrearChip: boolean;
 
-  esAdministrador: boolean;
-
-  claseTextoTarjeta: string = "texto-tarjeta";
+  esAdministrador: boolean = false;
 
   tarjetaActual: Tarjeta;
 
@@ -28,7 +25,15 @@ export class StackComponent implements OnInit {
 
   clases: string[] = ["contenedor-tarjeta1", "contenedor-tarjeta2", "contenedor-tarjeta3"];
 
-  constructor(private datos: DatosBackendService, private jwt: EstadoJwtService, private http: HttpClient) {
+  constructor(private datos: DatosBackendService, private http: HttpClient) {
+    datos.obtenerEditable().subscribe({
+      next:(b)=>{
+        
+        this.esAdministrador = b;
+        console.log(this.esAdministrador);
+      }
+    });
+
     this.mostrarVentanaStack = false;
 
     this.mostrarCrearChip = false;
@@ -38,11 +43,11 @@ export class StackComponent implements OnInit {
     this.tarjetas = datos.obtenerTarjetas();
 
     this.chips = datos.obtenerChips();
-
-    this.esAdministrador = jwt.esAdministrador();
+    
   }
 
   ngOnInit(): void {
+    
   }
 
   editarTarjeta(indice: number) {

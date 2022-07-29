@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
-import { EstadoJwtService } from 'src/app/servicio/estado-jwt.service';
 import { Usuario } from 'src/app/servicio/Usuario';
 
 @Component({
@@ -9,16 +8,24 @@ import { Usuario } from 'src/app/servicio/Usuario';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  esAdministrador:boolean;
+  esAdministrador:boolean = false;
 
   mostrarVentanaAcercaDe: boolean = false;
 
   nombreAcercaDe: string = '';
 
-  constructor(private datos: DatosBackendService, private jwt:EstadoJwtService) {
+  constructor(private datos: DatosBackendService) {
+    datos.obtenerEditable().subscribe({
+      next:(b)=>{
+        
+        this.esAdministrador = b;
+        console.log(this.esAdministrador);
+      }
+    });
+
     this.nombreAcercaDe = datos.obtenerNombreAcercaDe();
     
-    this.esAdministrador = jwt.esAdministrador();
+    // this.esAdministrador = datos.obtenerEditable();
   }
 
   ngOnInit(): void {

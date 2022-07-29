@@ -1,6 +1,6 @@
-<app-cabecera (abrirLogin)="abrirLogin()"></app-cabecera>
-
-<main *ngIf="iniciarPorfolio">
+<app-cabecera (abrirLogin)="abrirLogin()" [inicioSesion]="iniciarPortfolio"></app-cabecera>
+                                                          
+<main *ngIf="iniciarPortfolio">
   <app-acerca-de></app-acerca-de>
   <app-stack></app-stack>
   <app-skills></app-skills>
