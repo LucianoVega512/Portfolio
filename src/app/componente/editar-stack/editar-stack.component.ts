@@ -16,12 +16,12 @@ export class EditarStackComponent implements OnInit {
 
   formulario: FormGroup;
 
-  stacks: { claseTarjeta: string, span: string, nombreCampo: string }[] = [
-    { claseTarjeta: "tarjeta1", span: "Descripcion 1", nombreCampo: "descripcion1" },
-    { claseTarjeta: "tarjeta2", span: "Descripcion 2", nombreCampo: "descripcion2" },
-    { claseTarjeta: "tarjeta3", span: "Descripcion 3", nombreCampo: "descripcion3" },
-    { claseTarjeta: "chip", span: "Agregar chip", nombreCampo: "chip" }
-  ];
+  // stacks: { claseTarjeta: string, span: string, nombreCampo: string }[] = [
+  //   { claseTarjeta: "tarjeta1", span: "Descripcion 1", nombreCampo: "descripcion1" },
+  //   { claseTarjeta: "tarjeta2", span: "Descripcion 2", nombreCampo: "descripcion2" },
+  //   { claseTarjeta: "tarjeta3", span: "Descripcion 3", nombreCampo: "descripcion3" },
+  //   { claseTarjeta: "chip", span: "Agregar chip", nombreCampo: "chip" }
+  // ];
 
   constructor(private http: HttpClient, private datos: DatosBackendService) {
     this.formulario = new FormGroup({
@@ -35,7 +35,8 @@ export class EditarStackComponent implements OnInit {
   }
 
   enviarTarjeta() {
-    if (!this.formulario.get("descripcion")?.invalid) {
+    if (!this.formulario.get("descripcion")?.invalid) 
+    {
       this.tarjeta.descripcion = this.formulario.get("descripcion")?.value;
       let token: string = this.datos.obtenerToken();
 
@@ -49,6 +50,10 @@ export class EditarStackComponent implements OnInit {
           alert('credenciales invalidas');
         }
       });
+    }
+    else
+    {
+      this.guardarTarjeta.emit(undefined);
     }
   }
 }

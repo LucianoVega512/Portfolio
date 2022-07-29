@@ -23,7 +23,7 @@ export class ProyectosComponent implements OnInit {
 
   constructor(private datos: DatosBackendService) {
     datos.obtenerEditable().subscribe({
-      next:(b)=>{        
+      next: (b) => {
         this.esAdministrador = b;
       }
     });
@@ -58,11 +58,14 @@ export class ProyectosComponent implements OnInit {
 
   guardarDescripcion(descripcion: Descripcion) {
 
-    this.descripciones.forEach(t => {
-      if (t.id == descripcion.id) {
-        t.descripcionProyecto = descripcion.descripcionProyecto;
-      }
-    });
+    if (descripcion != undefined) 
+    {
+      this.descripciones.forEach(t => {
+        if (t.id == descripcion.id) {
+          t.descripcionProyecto = descripcion.descripcionProyecto;
+        }
+      });
+    }
 
     this.mostrarVentanaProyecto = false;
   }

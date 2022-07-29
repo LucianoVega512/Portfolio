@@ -19,10 +19,8 @@ export class SkillsComponent implements OnInit {
 
   constructor(private datos: DatosBackendService) {
     datos.obtenerEditable().subscribe({
-      next:(b)=>{
-        
+      next: (b) => {
         this.esAdministrador = b;
-        console.log(this.esAdministrador);
       }
     });
 
@@ -42,12 +40,14 @@ export class SkillsComponent implements OnInit {
     }
   }
 
-  guardarTecnologia(tecnologia: Tecnologia) {
-    this.tecnologias.forEach(t => {
-      if (t.id == tecnologia.id) {
-        t.valor = tecnologia.valor;
-      }
-    });
+  guardarTecnologia(tecnologia: Tecnologia | undefined) {
+    if (tecnologia != undefined) {
+      this.tecnologias.forEach(t => {
+        if (t.id == tecnologia.id) {
+          t.valor = tecnologia.valor;
+        }
+      });
+    }
 
     this.mostrarVentanaSkills = false;
   }

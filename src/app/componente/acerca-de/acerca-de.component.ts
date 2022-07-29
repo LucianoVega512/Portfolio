@@ -8,7 +8,7 @@ import { Usuario } from 'src/app/servicio/Usuario';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  esAdministrador:boolean = false;
+  esAdministrador: boolean = false;
 
   mostrarVentanaAcercaDe: boolean = false;
 
@@ -16,16 +16,12 @@ export class AcercaDeComponent implements OnInit {
 
   constructor(private datos: DatosBackendService) {
     datos.obtenerEditable().subscribe({
-      next:(b)=>{
-        
+      next: (b) => {
         this.esAdministrador = b;
-        console.log(this.esAdministrador);
       }
     });
 
     this.nombreAcercaDe = datos.obtenerNombreAcercaDe();
-    
-    // this.esAdministrador = datos.obtenerEditable();
   }
 
   ngOnInit(): void {
@@ -35,10 +31,12 @@ export class AcercaDeComponent implements OnInit {
     this.mostrarVentanaAcercaDe = true;
   }
 
-  validarAcercaDe(usuario: Usuario) {
-    this.nombreAcercaDe = usuario.nombreAcercaDe;
-
-    this.datos.establecerUsuario(usuario);
+  validarAcercaDe(usuario: Usuario | undefined) {
+    if (usuario != undefined) 
+    {
+      this.nombreAcercaDe = usuario.nombreAcercaDe;
+      this.datos.establecerUsuario(usuario);
+    }
 
     this.mostrarVentanaAcercaDe = false;
   }

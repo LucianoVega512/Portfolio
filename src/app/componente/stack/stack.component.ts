@@ -27,10 +27,8 @@ export class StackComponent implements OnInit {
 
   constructor(private datos: DatosBackendService, private http: HttpClient) {
     datos.obtenerEditable().subscribe({
-      next:(b)=>{
-        
+      next: (b) => {
         this.esAdministrador = b;
-        console.log(this.esAdministrador);
       }
     });
 
@@ -43,11 +41,11 @@ export class StackComponent implements OnInit {
     this.tarjetas = datos.obtenerTarjetas();
 
     this.chips = datos.obtenerChips();
-    
+
   }
 
   ngOnInit(): void {
-    
+
   }
 
   editarTarjeta(indice: number) {
@@ -59,20 +57,26 @@ export class StackComponent implements OnInit {
     }
   }
 
-  // Ver esta linea 
-  guardarTarjeta(tarjeta: Tarjeta) {
-    this.tarjetas.forEach(t => {
-      if (t.id == tarjeta.id) {
-        t.descripcion = tarjeta.descripcion;
-      }
-    });
+
+  guardarTarjeta(tarjeta: Tarjeta | undefined) {
+    if (tarjeta != undefined) 
+    {
+      this.tarjetas.forEach(t => {
+        if (t.id == tarjeta.id) {
+          t.descripcion = tarjeta.descripcion;
+        }
+      });
+    }
 
     this.mostrarVentanaStack = false;
   }
 
-  guardarChip(chip: Chip) {
+  guardarChip(chip: Chip | undefined) {
+    if (chip != undefined) 
+    {
+      this.chips.push(chip);
+    }
 
-    this.chips.push(chip);
     this.mostrarCrearChip = false;
   }
 

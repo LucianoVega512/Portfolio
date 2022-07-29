@@ -44,5 +44,9 @@ export class EditarSkillsComponent implements OnInit {
         }
       });
     }
+    else
+    {
+      this.guardarTecnologia.emit(undefined);
+    }
   }
 }

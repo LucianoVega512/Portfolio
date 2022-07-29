@@ -25,7 +25,8 @@ export class AdministradorComponent implements OnInit {
   }
 
   enviarCredenciales() {
-    if (!this.formulario.invalid) {
+    if (!this.formulario.invalid) 
+    {
       let usuario: string = this.formulario.get("usuario")?.value;
       let clave: string = this.formulario.get("clave")?.value;
 
@@ -46,6 +47,10 @@ export class AdministradorComponent implements OnInit {
           this.esEditable.emit(false);
         }
       });
+    }
+    else
+    {
+      this.esEditable.emit(false);
     }
   }
 }

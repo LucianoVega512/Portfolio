@@ -15,7 +15,7 @@ export class EditarAcercaDeComponent implements OnInit {
 
   formulario: FormGroup;
 
-  usuario:Usuario;
+  usuario: Usuario;
 
   constructor(private http: HttpClient, private datos: DatosBackendService) {
     this.formulario = new FormGroup({
@@ -29,9 +29,11 @@ export class EditarAcercaDeComponent implements OnInit {
   }
 
   cerrarVentanaAcercaDe() {
-    if (!this.formulario.get("nombre")?.invalid) {
-      let nombre:string = this.formulario.get("nombre")?.value;
-      let token:string = this.usuario.token;      
+    if (!this.formulario.get("nombre")?.invalid) 
+    {
+      let nombre: string = this.formulario.get("nombre")?.value;
+      this.usuario.nombreAcercaDe = nombre;
+      let token: string = this.usuario.token;
 
       const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
 
@@ -45,6 +47,10 @@ export class EditarAcercaDeComponent implements OnInit {
           this.validarAcercaDe.emit(this.usuario);
         }
       });
+    }
+    else 
+    {
+      this.validarAcercaDe.emit(undefined);
     }
   }
 

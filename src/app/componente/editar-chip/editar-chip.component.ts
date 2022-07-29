@@ -24,7 +24,8 @@ export class EditarChipComponent implements OnInit {
   }
 
   enviarChip() {
-    if (!this.formulario.get("chip")?.invalid) {
+    if (!this.formulario.get("chip")?.invalid) 
+    {
       let chip: Chip = <Chip>{};
       chip.id = 0;
       chip.chipDescripcion = this.formulario.get("chip")?.value;
@@ -40,6 +41,10 @@ export class EditarChipComponent implements OnInit {
           alert('credenciales invalidas');
         }
       });
+    }
+    else
+    {
+      this.guardarChip.emit(undefined);
     }
   }
 }

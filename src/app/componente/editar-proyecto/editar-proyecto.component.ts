@@ -46,5 +46,9 @@ export class EditarProyectoComponent implements OnInit {
         }
       });
     }
+    else
+    {
+      this.guardarDescripcion.emit(undefined);
+    }
   }
 }
