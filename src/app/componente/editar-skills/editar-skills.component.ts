@@ -41,6 +41,7 @@ export class EditarSkillsComponent implements OnInit {
         },
         error: () => {
           alert('credenciales invalidas');
+          this.guardarTecnologia.emit(undefined);
         }
       });
     }

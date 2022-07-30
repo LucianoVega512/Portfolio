@@ -59,13 +59,15 @@ form .entrada:valid +
     cursor: pointer;
     height: 100%;
     width: 100%;
-    transition-duration: 0.4s;
+    transition-duration: 0.3s;
 }
+
 
 .boton:hover {
     background-color: #263238;
     border:solid 2px #263238;
 }
+
 
 .boton-editar{
     cursor: pointer;
@@ -90,7 +92,6 @@ form .entrada:valid +
     border: solid 1px #fff;
 }
 
-/* --------------------------------------- */
 .contenedor-editar {
     position: fixed;
     z-index: 1;

@@ -14,7 +14,7 @@
                          ". tarjeta1 tarjeta1 tarjeta1 tarjeta2 tarjeta2 tarjeta2 tarjeta3 tarjeta3 tarjeta3 . titulo"
                          ". . . . . . . . . . . titulo"
                          ". . chip chip chip chip chip chip chip boton . titulo"
-                         ". . chip chip chip chip chip chip chip boton . titulo"
+                         ". . chip chip chip chip chip chip chip . . titulo"
                          ". . . . . . . . . . . titulo";
 }
 
@@ -105,6 +105,8 @@
 
 #contenedor-stack > #boton-editar{
     grid-area: boton;
-    align-self: center;
-    justify-self: center;
+}
+
+#contenedor-stack > #boton-editar > button:hover {
+    background-color: #154360;
 }

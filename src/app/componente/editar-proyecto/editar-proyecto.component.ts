@@ -43,6 +43,7 @@ export class EditarProyectoComponent implements OnInit {
         },
         error: () => {
           alert('credenciales invalidas');
+          this.guardarDescripcion.emit(undefined);
         }
       });
     }

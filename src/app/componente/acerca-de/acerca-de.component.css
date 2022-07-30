@@ -12,16 +12,14 @@
                          "foto foto foto foto . saludo saludo saludo saludo saludo . titulo"
                          "foto foto foto foto . . . . . . . titulo"
                          "foto foto foto foto . subtitulo subtitulo subtitulo subtitulo subtitulo . titulo"
-                         "foto foto foto foto . . . boton . . . titulo"
+                         "foto foto foto foto . . . . . . . titulo"
                          ". . . . . . . boton . . . titulo"
                          ". . . . . . . . . . . titulo"
                          ". . . . . . . . . . . titulo"
                          ". . . . . . . . . . . titulo";
 }
 
-
-
-#contenedor-acerca-de > #contenedor-foto{
+#contenedor-acerca-de > #contenedor-foto {
     grid-area: foto;
 }
 
@@ -48,8 +46,10 @@
 
 #contenedor-acerca-de > #boton-editar{
     grid-area: boton;
-    align-self: center;
-    justify-self: center;
+}
+
+#contenedor-acerca-de > #boton-editar > button:hover {
+    background-color: #263238;
 }
 
 p{

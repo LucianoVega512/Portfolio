@@ -46,6 +46,7 @@
     border:solid 2px #154360;
 }
 
+
 #contenedor-cabecera > #contenedor-banner{
     grid-column: 1 / 4;
     grid-row: 2 / 8;

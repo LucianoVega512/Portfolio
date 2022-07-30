@@ -39,6 +39,7 @@ export class EditarChipComponent implements OnInit {
         },
         error: () => {
           alert('credenciales invalidas');
+          this.guardarChip.emit(undefined);
         }
       });
     }

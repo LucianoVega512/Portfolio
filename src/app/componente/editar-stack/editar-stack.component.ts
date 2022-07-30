@@ -48,6 +48,7 @@ export class EditarStackComponent implements OnInit {
         },
         error: () => {
           alert('credenciales invalidas');
+          this.guardarTarjeta.emit(undefined);
         }
       });
     }

@@ -44,7 +44,7 @@ export class EditarAcercaDeComponent implements OnInit {
         },
         error: () => {
           alert('credenciales invalidas');
-          this.validarAcercaDe.emit(this.usuario);
+          this.validarAcercaDe.emit(undefined);
         }
       });
     }
