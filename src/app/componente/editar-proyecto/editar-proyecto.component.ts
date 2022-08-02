@@ -37,7 +37,7 @@ export class EditarProyectoComponent implements OnInit {
 
       const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
 
-      this.http.put<string>('api/modificar/descripcion', this.descripcion, cabecera).subscribe({
+      this.http.put<string>('https://still-spire-76335.herokuapp.com/api/modificar/descripcion', this.descripcion, cabecera).subscribe({
         next: (n) => {
           this.guardarDescripcion.emit(this.descripcion);
         },

@@ -37,8 +37,8 @@ export class AdministradorComponent implements OnInit {
       let token: string = this.datos.obtenerToken();
 
       const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
-
-      this.http.post<boolean>('/api/usuario/administrador', administrador, cabecera).subscribe({
+      
+      this.http.post<boolean>('https://still-spire-76335.herokuapp.com/api/usuario/administrador', administrador, cabecera).subscribe({
         next: (b) => {
           this.esEditable.emit(b);
         },

@@ -37,7 +37,7 @@ export class EditarAcercaDeComponent implements OnInit {
 
       const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
 
-      this.http.put<string>('api/modificar/acerca_de', this.usuario, cabecera).subscribe({
+      this.http.put<string>('https://still-spire-76335.herokuapp.com/api/modificar/acerca_de', this.usuario, cabecera).subscribe({
         next: (n) => {
           this.usuario.nombreAcercaDe = nombre;
           this.validarAcercaDe.emit(this.usuario);

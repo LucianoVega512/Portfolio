@@ -15,6 +15,7 @@
     background-color: #154360;
     grid-column: 5 / 9;
     grid-row: 2 / 8;
+    border: solid 1px #ccc;
 
     display: grid;
     height: 100%;

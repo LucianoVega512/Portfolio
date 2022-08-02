@@ -7,17 +7,17 @@
 
         <div [ngClass]="{'puntero':esAdministrador}" class="contenedor-imagen-flexible" *ngSwitchCase="'0'"
             (click)="editarProyecto(descripciones[0])">
-            <img [src]="descripciones[0].url" style="width: 50%;" alt="">
+            <img [src]="descripciones[0].url" style="width: 100%;" alt="">
         </div>
 
         <div [ngClass]="{'puntero':esAdministrador}" class="contenedor-imagen-flexible" *ngSwitchCase="'1'"
             (click)="editarProyecto(descripciones[1])">
-            <img [src]="descripciones[1].url" style="width: 50%;" alt="">
+            <img [src]="descripciones[1].url" style="width: 100%;" alt="">
         </div>
 
         <div [ngClass]="{'puntero':esAdministrador}" class="contenedor-imagen-flexible" *ngSwitchCase="'2'"
             (click)="editarProyecto(descripciones[2])">
-            <img [src]="descripciones[2].url" style="width: 50%;" alt="">
+            <img [src]="descripciones[2].url" style="width: 100%;" alt="">
         </div>
     </div>
 

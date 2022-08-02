@@ -29,17 +29,12 @@ export class CabeceraComponent implements OnInit {
   }
 
   esEditable(editable:boolean){
-
-    //estado administrador
     this.datos.subscribirEditable(editable);
     
-
-    //cerrar ventana admin   
     this.cerrarVentanaAdmin = false; 
   }
 
   mostrarVentanaLogin() {
     this.abrirLogin.emit();
   }
-
 }

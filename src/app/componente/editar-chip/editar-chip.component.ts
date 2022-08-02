@@ -33,7 +33,7 @@ export class EditarChipComponent implements OnInit {
 
       const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
 
-      this.http.post<string>('api/crear/chip', chip, cabecera).subscribe({
+      this.http.post<string>('https://still-spire-76335.herokuapp.com/api/crear/chip', chip, cabecera).subscribe({
         next: (n) => {
           this.guardarChip.emit(chip);
         },

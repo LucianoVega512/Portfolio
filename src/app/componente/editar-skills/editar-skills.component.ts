@@ -35,7 +35,7 @@ export class EditarSkillsComponent implements OnInit {
 
       const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
 
-      this.http.put<string>('api/modificar/tecnologia', this.tecnologia, cabecera).subscribe({
+      this.http.put<string>('https://still-spire-76335.herokuapp.com/api/modificar/tecnologia', this.tecnologia, cabecera).subscribe({
         next: (n) => {
           this.guardarTecnologia.emit(this.tecnologia);
         },

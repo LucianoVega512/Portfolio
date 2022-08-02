@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { DatosBackendService } from './servicio/datos-backend.service';
@@ -40,7 +40,16 @@ export class AppComponent implements OnInit {
       credenciales.nombreUsuario = usuario;
       credenciales.clave = clave;
 
-      this.http.post<Portafolio>('/api/usuario', credenciales).subscribe({
+      // this.http.get<string>('https://still-spire-76335.herokuapp.com/api/usuario').subscribe({
+      //   next: (val) => {
+      //     console.log(val);
+      //   },
+      //   error: (e) => {alert('credenciales invalidas');
+      //   console.log(e)}
+      // });
+
+      // this.http.post<Portafolio>('https://still-spire-76335.herokuapp.com/api/usuario', credenciales).subscribe({
+      this.http.post<Portafolio>('https://still-spire-76335.herokuapp.com/api/usuario', credenciales).subscribe({
         next: (portafolio) => {
           this.datos.establecerPortfolio(portafolio);
           this.iniciarPortfolio = true;

@@ -88,7 +88,7 @@ export class StackComponent implements OnInit {
     let token: string = this.datos.obtenerToken();
     let cabecera: HttpHeaders = new HttpHeaders({ 'Authorization': `${token}` });
 
-    this.http.delete('api/eliminar/chip', { headers: cabecera, body: this.chips[indice] }).subscribe({
+    this.http.delete('https://still-spire-76335.herokuapp.com/api/eliminar/chip', { headers: cabecera, body: this.chips[indice] }).subscribe({
       next: (n) => {
         this.chips.splice(indice, 1);
       },

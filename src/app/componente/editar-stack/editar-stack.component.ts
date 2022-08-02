@@ -42,7 +42,7 @@ export class EditarStackComponent implements OnInit {
 
       const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
 
-      this.http.put<string>('api/modificar/tarjeta', this.tarjeta, cabecera).subscribe({
+      this.http.put<string>('https://still-spire-76335.herokuapp.com/api/modificar/tarjeta', this.tarjeta, cabecera).subscribe({
         next: (n) => {
           this.guardarTarjeta.emit(this.tarjeta);
         },
