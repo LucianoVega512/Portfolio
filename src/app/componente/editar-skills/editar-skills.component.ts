@@ -14,6 +14,9 @@ export class EditarSkillsComponent implements OnInit {
   @Output() guardarTecnologia = new EventEmitter<Tecnologia>();
   @Input() tecnologia: Tecnologia;
 
+  textoAlerta:string = '';
+  mostrarAlerta:boolean = false;
+
   formulario: FormGroup;
 
   constructor(private http: HttpClient, private datos: DatosBackendService) {
@@ -40,8 +43,7 @@ export class EditarSkillsComponent implements OnInit {
           this.guardarTecnologia.emit(this.tecnologia);
         },
         error: () => {
-          alert('credenciales invalidas');
-          this.guardarTecnologia.emit(undefined);
+          this.alternarAlerta('credenciales invalidas');
         }
       });
     }
@@ -49,5 +51,13 @@ export class EditarSkillsComponent implements OnInit {
     {
       this.guardarTecnologia.emit(undefined);
     }
+  }
+
+  private alternarAlerta(msj: string) {
+    this.textoAlerta = msj;
+    this.mostrarAlerta = true;
+    setTimeout(() => {
+      this.mostrarAlerta = false;
+    }, 2000);
   }
 }

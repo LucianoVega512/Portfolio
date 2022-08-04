@@ -12,9 +12,12 @@ import { Descripcion } from 'src/app/servicio/Descripcion';
 export class EditarProyectoComponent implements OnInit {
 
   @Output() guardarDescripcion: EventEmitter<Descripcion> = new EventEmitter();
-  @Input() descripcion:Descripcion; 
+  @Input() descripcion: Descripcion;
 
-  formulario:FormGroup;
+  textoAlerta: string = '';
+  mostrarAlerta: boolean = false;
+
+  formulario: FormGroup;
 
   proyectos: string[] = ["descripcion1", "descripcion2", "descripcion3"];
 
@@ -29,7 +32,7 @@ export class EditarProyectoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  enviarProyecto(){
+  enviarProyecto() {
     if (!this.formulario.get("descripcion")?.invalid) {
       this.descripcion.descripcionProyecto = this.formulario.get("descripcion")?.value;
 
@@ -42,14 +45,20 @@ export class EditarProyectoComponent implements OnInit {
           this.guardarDescripcion.emit(this.descripcion);
         },
         error: () => {
-          alert('credenciales invalidas');
-          this.guardarDescripcion.emit(undefined);
+          this.alternarAlerta('credenciales invalidas');
         }
       });
     }
-    else
-    {
+    else {
       this.guardarDescripcion.emit(undefined);
     }
+  }
+
+  private alternarAlerta(msj: string) {
+    this.textoAlerta = msj;
+    this.mostrarAlerta = true;
+    setTimeout(() => {
+      this.mostrarAlerta = false;
+    }, 2000);
   }
 }

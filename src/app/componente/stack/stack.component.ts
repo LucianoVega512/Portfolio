@@ -10,6 +10,8 @@ import { Tarjeta } from 'src/app/servicio/Tarjeta';
   styleUrls: ['./stack.component.css']
 })
 export class StackComponent implements OnInit {
+  textoAlerta:string = '';
+    mostrarAlerta:boolean = false;
 
   mostrarVentanaStack: boolean;
 
@@ -50,8 +52,6 @@ export class StackComponent implements OnInit {
 
   editarTarjeta(indice: number) {
     if (this.esAdministrador) {
-
-      // tarjeta a modificar
       this.tarjetaActual = this.tarjetas[indice];
       this.mostrarVentanaStack = true;
     }
@@ -93,8 +93,16 @@ export class StackComponent implements OnInit {
         this.chips.splice(indice, 1);
       },
       error: () => {
-        alert('credenciales invalidas');
+        this.alternarAlerta('credenciales invalidas');
       }
     });
+  }
+
+  private alternarAlerta(msj: string) {
+    this.textoAlerta = msj;
+    this.mostrarAlerta = true;
+    setTimeout(() => {
+      this.mostrarAlerta = false;
+    }, 2000);
   }
 }

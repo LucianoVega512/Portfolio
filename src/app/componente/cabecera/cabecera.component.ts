@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-// import { AcercaDe } from 'src/app/servicio/AcercaDe';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
 
 @Component({

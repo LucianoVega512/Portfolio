@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { DatosBackendService } from './servicio/datos-backend.service';
 import { Portafolio } from './servicio/Portafolio';
@@ -13,13 +13,15 @@ export class AppComponent implements OnInit {
   mostrarLogin: boolean = false;
   iniciarPortfolio: boolean;
 
+  textoAlerta: string = '';
+
+  mostrarAlerta: boolean = false;
+
   constructor(private http: HttpClient, private datos: DatosBackendService) {
     this.iniciarPortfolio = false;
   }
 
-  ngOnInit(): void {
-    // this.iniciarPorfolio = this.jwt.estaLogueado();
-  }
+  ngOnInit(): void { }
 
   abrirLogin() {
     this.mostrarLogin = true;
@@ -37,25 +39,28 @@ export class AppComponent implements OnInit {
       let clave: string = formulario.get("clave")?.value;
 
       let credenciales: { nombreUsuario: string, clave: string } = { nombreUsuario: "", clave: "" };
+
       credenciales.nombreUsuario = usuario;
       credenciales.clave = clave;
 
-      // this.http.get<string>('https://still-spire-76335.herokuapp.com/api/usuario').subscribe({
-      //   next: (val) => {
-      //     console.log(val);
-      //   },
-      //   error: (e) => {alert('credenciales invalidas');
-      //   console.log(e)}
-      // });
-
-      // this.http.post<Portafolio>('https://still-spire-76335.herokuapp.com/api/usuario', credenciales).subscribe({
       this.http.post<Portafolio>('https://still-spire-76335.herokuapp.com/api/usuario', credenciales).subscribe({
         next: (portafolio) => {
           this.datos.establecerPortfolio(portafolio);
           this.iniciarPortfolio = true;
         },
-        error: () => alert('credenciales invalidas')
+        
+        error: () => {
+          this.alternarAlerta("Credenciales invalidas");
+        }
       });
     }
+  }
+
+  private alternarAlerta(msj: string) {
+    this.textoAlerta = msj;
+    this.mostrarAlerta = true;
+    setTimeout(() => {
+      this.mostrarAlerta = false;
+    }, 2000);
   }
 }

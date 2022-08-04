@@ -29,3 +29,5 @@
 <app-editar-stack *ngIf="mostrarVentanaStack" (guardarTarjeta)="guardarTarjeta($event)" [tarjeta]="tarjetaActual"></app-editar-stack>
 
 <app-editar-chip *ngIf="mostrarCrearChip" (guardarChip)="guardarChip($event)"></app-editar-chip>
+
+<app-alerta *ngIf="mostrarAlerta" [mensajeAlerta]="textoAlerta"></app-alerta>

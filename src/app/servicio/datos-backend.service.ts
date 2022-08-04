@@ -11,21 +11,19 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class DatosBackendService {
+  mensajeAlerta: string = '';
 
   portafolio?: Portafolio;
 
-  // esEditable: boolean;
-
   subject: Subject<boolean> = new Subject();
 
-  constructor() {
-  }
-
+  constructor() { }
+  
   obtenerEditable(): Observable<boolean> {
     return this.subject.asObservable();
   }
 
-  subscribirEditable(estado:boolean){    
+  subscribirEditable(estado: boolean) {
     this.subject.next(estado);
   }
 

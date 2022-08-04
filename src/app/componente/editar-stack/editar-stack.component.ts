@@ -14,14 +14,10 @@ export class EditarStackComponent implements OnInit {
   @Output() guardarTarjeta = new EventEmitter<Tarjeta>();
   @Input() tarjeta: Tarjeta;
 
-  formulario: FormGroup;
+  textoAlerta: string = '';
+  mostrarAlerta: boolean = false;
 
-  // stacks: { claseTarjeta: string, span: string, nombreCampo: string }[] = [
-  //   { claseTarjeta: "tarjeta1", span: "Descripcion 1", nombreCampo: "descripcion1" },
-  //   { claseTarjeta: "tarjeta2", span: "Descripcion 2", nombreCampo: "descripcion2" },
-  //   { claseTarjeta: "tarjeta3", span: "Descripcion 3", nombreCampo: "descripcion3" },
-  //   { claseTarjeta: "chip", span: "Agregar chip", nombreCampo: "chip" }
-  // ];
+  formulario: FormGroup;
 
   constructor(private http: HttpClient, private datos: DatosBackendService) {
     this.formulario = new FormGroup({
@@ -35,8 +31,7 @@ export class EditarStackComponent implements OnInit {
   }
 
   enviarTarjeta() {
-    if (!this.formulario.get("descripcion")?.invalid) 
-    {
+    if (!this.formulario.get("descripcion")?.invalid) {
       this.tarjeta.descripcion = this.formulario.get("descripcion")?.value;
       let token: string = this.datos.obtenerToken();
 
@@ -47,14 +42,20 @@ export class EditarStackComponent implements OnInit {
           this.guardarTarjeta.emit(this.tarjeta);
         },
         error: () => {
-          alert('credenciales invalidas');
-          this.guardarTarjeta.emit(undefined);
+          this.alternarAlerta('credenciales invalidas');
         }
       });
     }
-    else
-    {
+    else {
       this.guardarTarjeta.emit(undefined);
     }
+  }
+
+  private alternarAlerta(msj: string) {
+    this.textoAlerta = msj;
+    this.mostrarAlerta = true;
+    setTimeout(() => {
+      this.mostrarAlerta = false;
+    }, 2000);
   }
 }

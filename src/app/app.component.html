@@ -7,4 +7,6 @@
  <app-proyectos></app-proyectos>
 </main>
 
+<app-alerta *ngIf="mostrarAlerta" [mensajeAlerta]="textoAlerta"></app-alerta>
+
 <app-login *ngIf="mostrarLogin" (cerrarVentanaLogin)="cerrarLogin()" (enviarLogin)="enviarLogin($event)"></app-login>

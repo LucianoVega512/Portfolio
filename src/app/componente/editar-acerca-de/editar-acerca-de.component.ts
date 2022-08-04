@@ -13,6 +13,10 @@ export class EditarAcercaDeComponent implements OnInit {
 
   @Output() validarAcercaDe: EventEmitter<Usuario> = new EventEmitter();
 
+  textoAlerta:string = '';
+
+  mostrarAlerta:boolean=false;
+
   formulario: FormGroup;
 
   usuario: Usuario;
@@ -43,8 +47,7 @@ export class EditarAcercaDeComponent implements OnInit {
           this.validarAcercaDe.emit(this.usuario);
         },
         error: () => {
-          alert('credenciales invalidas');
-          this.validarAcercaDe.emit(undefined);
+          this.alternarAlerta('credenciales invalidas');
         }
       });
     }
@@ -52,6 +55,14 @@ export class EditarAcercaDeComponent implements OnInit {
     {
       this.validarAcercaDe.emit(undefined);
     }
+  }
+
+  private alternarAlerta(msj: string) {
+    this.textoAlerta = msj;
+    this.mostrarAlerta = true;
+    setTimeout(() => {
+      this.mostrarAlerta = false;
+    }, 2000);
   }
 
 }

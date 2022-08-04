@@ -12,6 +12,9 @@ import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
 export class EditarChipComponent implements OnInit {
   @Output() guardarChip = new EventEmitter<Chip>();
 
+    textoAlerta:string = '';
+    mostrarAlerta:boolean = false;
+
   formulario: FormGroup;
 
   constructor(private http: HttpClient, private datos: DatosBackendService) {
@@ -38,8 +41,7 @@ export class EditarChipComponent implements OnInit {
           this.guardarChip.emit(chip);
         },
         error: () => {
-          alert('credenciales invalidas');
-          this.guardarChip.emit(undefined);
+          this.alternarAlerta('credenciales invalidas');
         }
       });
     }
@@ -47,5 +49,13 @@ export class EditarChipComponent implements OnInit {
     {
       this.guardarChip.emit(undefined);
     }
+  }
+
+  private alternarAlerta(msj: string) {
+    this.textoAlerta = msj;
+    this.mostrarAlerta = true;
+    setTimeout(() => {
+      this.mostrarAlerta = false;
+    }, 2000);
   }
 }

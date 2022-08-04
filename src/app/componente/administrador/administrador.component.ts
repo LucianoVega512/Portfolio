@@ -1,5 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
 
@@ -11,6 +11,10 @@ import { DatosBackendService } from 'src/app/servicio/datos-backend.service';
 export class AdministradorComponent implements OnInit {
 
   @Output() esEditable: EventEmitter<boolean> = new EventEmitter();
+
+  textoAlerta: string = '';
+
+  mostrarAlerta: boolean = false;
 
   formulario: FormGroup;
 
@@ -25,8 +29,7 @@ export class AdministradorComponent implements OnInit {
   }
 
   enviarCredenciales() {
-    if (!this.formulario.invalid) 
-    {
+    if (!this.formulario.invalid) {
       let usuario: string = this.formulario.get("usuario")?.value;
       let clave: string = this.formulario.get("clave")?.value;
 
@@ -37,20 +40,31 @@ export class AdministradorComponent implements OnInit {
       let token: string = this.datos.obtenerToken();
 
       const cabecera = { headers: new HttpHeaders({ 'Authorization': `${token}` }) };
-      
+
       this.http.post<boolean>('https://still-spire-76335.herokuapp.com/api/usuario/administrador', administrador, cabecera).subscribe({
         next: (b) => {
-          this.esEditable.emit(b);
+          if (b) {
+            this.esEditable.emit(b);
+          }
+          else {
+            this.alternarAlerta("Usuario/Clave incorrecto");
+          }
         },
-        error: () => {
-          alert('credenciales invalidas');
-          this.esEditable.emit(false);
+        error: (e) => {
+          this.alternarAlerta("Credenciales vencidas");
         }
       });
     }
-    else
-    {
+    else {
       this.esEditable.emit(false);
     }
+  }
+
+  private alternarAlerta(msj: string) {
+    this.textoAlerta = msj;
+    this.mostrarAlerta = true;
+    setTimeout(() => {
+      this.mostrarAlerta = false;
+    }, 2000);
   }
 }
